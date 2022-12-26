@@ -1,9 +1,11 @@
-import React from 'react';
+import React from "react";
+
 
 function About() {
   return (
     <div>
-      <div className="">
+      <div>
+      <div >
         <h1 className="font-[400] text-4xl ml-24">HEALING!</h1>
         <h4 className="text-[#00000080] ml-24 mb-12">some cool one liner !</h4>
       </div>
@@ -19,6 +21,8 @@ function About() {
           <p className=" mr-20">Healing was founded by Payam Abubakr in 2021. It was called Healing Online, and started as a blog and an online community where some of the world&apos;s therapists shared their research and ideas. We launched the Beginner&apos;s Guide to Therapy and our first study, and that hub of industry expertise transformed into a small consulting firm and led us to create the Online Therapist of today!</p>
         </div>
       </div>
+    </div>
+      
     </div>
   );
 }
