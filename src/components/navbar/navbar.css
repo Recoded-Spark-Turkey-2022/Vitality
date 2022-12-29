@@ -1,0 +1,17 @@
+.bg-navbar {
+    background: #EAF8F9;
+}
+
+.width-height {
+    min-width: 100%!important;
+    min-height: 106px!important;
+
+}
+
+.btn-login {
+    background: #2DD3E3;
+    border-radius: 4px;
+    width:116px;
+    height:40px;
+
+}
