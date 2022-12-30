@@ -14,7 +14,7 @@ function About2() {
            <div className =" flex flex-row flex-wrap mt-10 ml-14 mr-14">
   <div className ="col">
     <div className ="card h-14 w-32  items-stretch">
-      <img src={Allan} className ="card-img-top" alt="..." />
+      <img src={Allan} className ="card-img-top -mb-1" alt="..." />
       <div className=" bg-green-800 m-0 h-1"><h1 className=" text-green-800">m</h1></div>
       <div className ="card-body bg-cyan-100">
         <h5 className ="card-title fw-bold text-xs text-center">Allan Saleh</h5>
@@ -24,7 +24,7 @@ function About2() {
   </div>
   <div className ="col ">
     <div className ="card h-14 w-32 ">
-      <img src={Payam} className ="card-img-top" alt="..." />
+      <img src={Payam} className ="card-img-top -mb-1" alt="..." />
       <div className=" bg-green-800 m-0 h-1"><h1 className=" text-green-800">m</h1></div>
       <div className ="card-body bg-cyan-100">
         <h5 className ="card-title text-xs fw-bold text-center">Payam Abubakr</h5>
@@ -34,7 +34,7 @@ function About2() {
   </div>
   <div className ="col">
     <div className ="card h-14 w-32 ">
-      <img src={Ahmed} className ="card-img-top" alt="Ahmed Mohammed" />
+      <img src={Ahmed} className ="card-img-top -mb-1" alt="Ahmed Mohammed" />
       <div className=" bg-green-800 m-0 h-1"><h1 className=" text-green-800">m</h1></div>
       <div className ="card-body bg-cyan-100">
         <h5 className ="card-title fw-bold text-xs text-center">Ahmed Mohammed</h5>
@@ -44,7 +44,7 @@ function About2() {
   </div>
   <div className ="col">
     <div className ="card h-14 w-32 ">
-      <img src={Abdulmajeed} className ="card-img-top" alt="..." />
+      <img src={Abdulmajeed} className ="card-img-top -mb-1" alt="..." />
       <div className=" bg-green-800 m-0 h-1"><h1 className=" text-green-800">m</h1></div>
       <div className ="card-body bg-cyan-100">
         <h5 className ="card-title fw-bold text-xs text-center">Abdulmajeed Jaafer</h5>
@@ -54,7 +54,7 @@ function About2() {
   </div>
   <div className ="col">
     <div className ="card h-14 w-32  ">
-      <img src={Snoor} className ="card-img-top" alt="Snoor Madih" />
+      <img src={Snoor} className ="card-img-top -mb-1" alt="Snoor Madih" />
       <div className=" bg-green-800 m-0 h-1"><h1 className=" text-green-800">m</h1></div>
       <div className ="card-body bg-cyan-100">
         <h5 className ="card-title fw-bold text-xs text-center">Snoor Madih</h5>
@@ -64,8 +64,8 @@ function About2() {
   </div>
   <div className ="col">
     <div className ="card h-14 w-32 ">
-      <img src={Avraz} className ="card-img-top" alt="Avraz" />
-      <div className=" bg-green-800 m-0 h-1"><h1 className=" text-green-800">m</h1></div>
+      <img src={Avraz} className ="card-img-top -mb-1" alt="Avraz" />
+      <div className=" bg-green-800 m-0 h-1 -mt-40"><h1 className=" text-green-800">m</h1></div>
       <div className ="card-body bg-cyan-100">
         <h5 className ="card-title fw-bold text-xs text-center">Avraz Zebary</h5>
         <p className ="card-text text-xs mt-4 text-center">Junior Designer & FE Developer</p>
