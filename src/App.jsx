@@ -1,14 +1,18 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import EditThanks from './components/editThanks/EditThanks';
 import MainLayout from './components/layouts/MainLayout';
 import About from './pages/about';
 import Blogs from './pages/blogs';
 import Contact from './pages/contact';
+import EditProfile from './pages/editProfile';
 import Home from './pages/home';
 import Login from './pages/login';
 import NotFound from './pages/notFound';
+import Requirements from './pages/requirements';
 import Team from './pages/team';
+import ViewProfile from './pages/viewProfile';
 
 function App() {
   return (
@@ -20,6 +24,11 @@ function App() {
         <Route path="/team"  element={<Team/>} />
         <Route path="/contact"  element={<Contact/>} />
         <Route path="/login"  element={<Login/>} />
+        <Route path="/requirements"  element={<Requirements/>} />
+        <Route path="/edit-profile"  element={<EditProfile/>} />
+        <Route path="/view-profile"  element={<ViewProfile/>} />
+        <Route path="/edit-thanks"  element={<EditThanks/>} />
+
 
 
         <Route component={<NotFound/>} />

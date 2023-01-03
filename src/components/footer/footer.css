@@ -1,0 +1,38 @@
+.footer {
+
+min-height: 240px;
+background-color: #FEE89E;
+margin-top: auto;
+
+
+}   
+
+.subscribe h2 {
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 36px;
+line-height: 44px;
+/* identical to box height, or 122% */
+
+letter-spacing: 0.18px;
+
+/* Fill / Black */
+
+color: #1A1A1A;
+}
+
+.sub-btn {
+    background: linear-gradient(0deg, #2DD3E3, #2DD3E3),
+linear-gradient(0deg, #718096, #718096)!important;
+border: 2px solid #718096;
+width:60px;
+height:60px;
+border-radius: 5px 5px;
+}
+
+.sub-input {
+    border: 2px solid #718096;
+
+
+}
