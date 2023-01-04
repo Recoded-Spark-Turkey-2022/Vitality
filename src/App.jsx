@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+
+import { Route, Routes ,BrowserRouter} from 'react-router-dom';
 
 import './App.css';
 import EditThanks from './components/editThanks/EditThanks';
@@ -21,8 +22,8 @@ import ThankYou from './components/Counselor/ThankYou';
 
 function App() {
   return (
-
-    <Routes>
+    <BrowserRouter>
+     <Routes>
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} exact />
         <Route path="/blogs" element={<Blogs />} />
@@ -44,6 +45,9 @@ function App() {
         <Route component={<NotFound/>} />
       </Route>
     </Routes>
+    
+    </BrowserRouter>
+   
   );
 }
 
