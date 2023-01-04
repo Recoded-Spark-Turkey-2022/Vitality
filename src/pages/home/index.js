@@ -1,8 +1,11 @@
 import React from 'react'
+import EnrollHome from "../../components/Counselor/EnrollHome"
 
 function Home() {
   return (
-    <div>Home</div>
+
+      <EnrollHome/>
+  
   )
 }
 

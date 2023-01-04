@@ -2,127 +2,13 @@ import { React } from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './navbar.css';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/images/logo.png';
 
 function Navbar() {
-  // const [state, setState] = useState({
-  //   menu: false,
-  //   isOpen: false,
-  //   homeLinkClass: 'nav-item nav-link',
-  //   aboutLinkClass: 'nav-item nav-link',
-  //   menuClass: '',
-  // });
-
-  // const toggleMenu = () => {
-  //   setState({
-  //     ...state,
-  //     menu: !state.menu,
-  //   });
-  // };
-
-  // const toggleOpen = () => setState({ ...state, isOpen: !state.isOpen });
-
-  // const show = state.menu ? 'show' : '';
-  // const menuClass = `dropdown-menu${state.isOpen ? ' show' : ''}`;
+ 
   return (
-    // <div className="bg-navbar sticky-top margin-bottom" >
+  
 
-    // <nav className="navbar navbar-expand-xl navbar-light bg-navbar sticky-top container margin-bottom">
-    //   <Link className="navbar-brand" to="/">
-    //     <img src={logo} alt="" width="30" height="24" />
-    //   </Link>
-    //   <Link className="navbar-brand" to="/">
-    //     Vitality
-    //   </Link>
-    //   <button className="navbar-toggler" type="button" onClick={toggleMenu}>
-    //     <span className="navbar-toggler-icon" />
-    //   </button>
-    //   <div className={`collapse navbar-collapse justify-content-end ${show}`}>
-    //     <div className="navbar-nav gap-4">
-    //       <Link
-    //         className={state.homeLinkClass}
-    //         to="/"
-    //         onClick={() =>
-    //           state.homeLinkClass === 'nav-item nav-link'
-    //             ? 'nav-item nav-link active'
-    //             : 'nav-item nav-link'
-    //         }
-    //       >
-    //         Home <span className="sr-only">(current)</span>
-    //       </Link>
-    //       <Link
-    //         className={state.aboutLinkClass}
-    //         to="/blogs"
-    //         onClick={() =>
-    //           state.aboutLinkClass === 'nav-item nav-link'
-    //             ? 'nav-item nav-link active'
-    //             : 'nav-item nav-link'
-    //         }
-    //       >
-    //         Blogs
-    //       </Link>
-    //       <button type="button" className="dropdown" onClick={toggleOpen}>
-    //         <div
-    //           className="dropdown-toggle"
-    //           id="dropdownMenuButton"
-    //           data-toggle="dropdown"
-    //           aria-haspopup="true"
-    //         >
-    //           About
-    //         </div>
-    //         <div className={menuClass} aria-labelledby="dropdownMenuButton">
-    //           <Link className="dropdown-item" to="/about">
-    //             About{' '}
-    //           </Link>
-    //           <Link className="dropdown-item" to="/team">
-    //             Team
-    //           </Link>
-    //           <Link className="dropdown-item" to="/requirements">
-    //             Requirements
-    //           </Link>
-    //         </div>
-    //       </button>
-
-    //       <Link
-    //         className={state.aboutLinkClass}
-    //         to="/contact"
-    //         onClick={() =>
-    //           state.aboutLinkClass === 'nav-item nav-link'
-    //             ? 'nav-item nav-link active'
-    //             : 'nav-item nav-link'
-    //         }
-    //       >
-    //         Contact Us
-    //       </Link>
-
-    //       <button type="button" className="dropdown " onClick={toggleOpen}>
-    //         <div
-    //           className="btn-login d-flex align-items-center justify-content-center"
-    //           id="dropdownMenuButton"
-    //           data-toggle="dropdown"
-    //           aria-haspopup="true"
-    //         >
-    //           Log In
-    //         </div>
-    //         <div className={menuClass} aria-labelledby="dropdownMenuButton">
-    //           <Link className="dropdown-item" to="/login">
-    //             Log In{' '}
-    //           </Link>
-    //           <Link className="dropdown-item" to="/edit-profile">
-    //             Edit Profile
-    //           </Link>
-    //           <Link className="dropdown-item" to="/requirements">
-    //             Logout
-    //           </Link>
-    //         </div>
-    //       </button>
-
-    //     </div>
-    //   </div>
-    // </nav>
-    // </div>
-
-    // jquery navbar
     <div className="bg-navbar fixed-top margin-bottom">
       <nav
         className="navbar navbar-expand-sm  

@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 
 import Image from 'react-bootstrap/Image';
 
-import avatar from '../../assets/avatar.png';
+import avatar from '../../assets/images/avatar.png';
 import avatarIcon from '../../assets/Icon/avatar-icon.svg';
 
 function ViewProfile() {

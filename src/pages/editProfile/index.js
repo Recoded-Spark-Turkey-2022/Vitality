@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import { Link } from 'react-router-dom';
-import avatar from '../../assets/avatar.png';
+import avatar from '../../assets/images/avatar.png';
 import avatarIcon from '../../assets/Icon/avatar-icon.svg';
 
 function EditProfile() {

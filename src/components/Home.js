@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <>
       <div>HOME</div>
-      <Link to="/About">
+      <Link to="/about">
         <button type="button">About!</button>
       </Link>
       <EnrollHome />
