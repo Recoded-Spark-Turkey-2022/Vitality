@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Link } from 'react-router-dom';
-import requirementsImg from './images/requirements-img.png';
+import requirementsImg from '../../assets/images/requirements-img.png'
 
 const Requirements = () => {
   return (
