@@ -5,7 +5,7 @@ import './navbar.css';
 import logo from '../../assets/images/logo.png';
 
 function Navbar() {
- 
+  
   return (
   
 
