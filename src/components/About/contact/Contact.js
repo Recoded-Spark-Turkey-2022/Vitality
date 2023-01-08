@@ -22,8 +22,8 @@ function Contact (){
                     <img src={Group} alt='Healling' className=" w-96 mt-16 ml-56 h-80 "/>
                 </div>
             </div>
-            <div className=" flex flex-row flex-wrap mt-28 ">
-                <div className=" ml-20 w-3/4 ">
+            <div className=" grid grid-flow-col mt-28 grid-cols-11 mb-28">
+                <div className=" ml-20   col-span-full  w-full mr-1">
                      <h5 className=" -mb-2">Full Name:  </h5><br/>
                      <input type="Name" id="Name" name="Name"  placeholder="Enter your full name here..." className="shadow p-3 mb-5 bg-white rounded w-5/12 h-20"/> <br/>
                      <h5 className=" -mb-2 -mt-2">Email:   </h5><br/>
@@ -32,13 +32,13 @@ function Contact (){
                      <textarea id="Details" name="Details" placeholder="Enter your details here..." className="shadow p-3 mb-5 bg-white rounded  w-5/12 h-44"/> <br/>
                      <button type="submit" className="btn btn btn-info bg-[#2DD3E3] -mt-8 w-56">Submit</button>
                 </div>
-                <div className=" bg-[#EAF8F9] w-1/4 h-64 mt-40 ml-96">
-                    <h1 className=" text-lg mb-3 ">Find Us At:</h1><br/>
-                    <p className="text-[#0000008A] -mb-6">Nergiz Plaza</p><br/>
-                    <p className="text-[#0000008A] -mb-6">3rd Floor</p><br/>
-                    <p className="text-[#0000008A] -mb-6">Bakhtiyari Street 40m</p><br/>
-                    <p className="text-[#0000008A] -mb-6">Erbil, Iraq</p><br/>
-                    <p className="text-[#0000008A] -mb-6">44001</p><br/>
+                <div className=" bg-[#EAF8F9]  h-64 mt-40  border rounded w-96 grid-cols-1  mr-52 ml-1">
+                    <h1 className=" text-lg mb-3 mt-8 ml-11">Find Us At:</h1><br/>
+                    <p className="text-[#0000008A] -mb-6 ml-11">Nergiz Plaza</p><br/>
+                    <p className="text-[#0000008A] -mb-6 ml-11">3rd Floor</p><br/>
+                    <p className="text-[#0000008A] -mb-6 ml-11">Bakhtiyari Street 40m</p><br/>
+                    <p className="text-[#0000008A] -mb-6 ml-11">Erbil, Iraq</p><br/>
+                    <p className="text-[#0000008A] -mb-6 ml-11">44001</p><br/>
                 </div>
             </div>
         </div>
