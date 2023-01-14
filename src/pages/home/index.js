@@ -1,12 +1,14 @@
-import React from 'react'
-import EnrollHome from "../../components/Counselor/EnrollHome"
+import React from 'react';
+import EnrollHome from '../../components/Counselor/EnrollHome';
+import HomeHelp from '../../components/Homepage/Help';
 
 function Home() {
   return (
-
-      <EnrollHome/>
-  
-  )
+    <>
+      <HomeHelp />
+      <EnrollHome />
+    </>
+  );
 }
 
-export default Home
+export default Home;
