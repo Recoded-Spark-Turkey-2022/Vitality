@@ -17,7 +17,7 @@ const EnrollHome = () => {
         <Col>
           <p>
             Interested in joining our mental health platform? You decide your
-            schedule and how much you want to work, we’ll take care of the
+            schedule and how much you want to work, we&apos;ll take care of the
             client referrals and billing details!
           </p>
         </Col>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Col, Container, Row, Image } from 'react-bootstrap';
+import './help.css';
 import homepageHelp from '../../assets/images/homepageHelp.png';
 import helpBackground from '../../assets/images/helpBackground.png';
 
@@ -7,7 +8,7 @@ const HomeHelp = () => {
   return (
     <Container
       fluid
-      className="d-flex align-items-center justify-content-center h-100"
+      className="d-flex align-items-center justify-content-center container-height"
       style={{
         backgroundImage: `url(${helpBackground})`,
         backgroundPosition: 'center',
@@ -15,7 +16,7 @@ const HomeHelp = () => {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      <Row className=" pt-1">
+      <Row className=" py-1">
         <Col
           sm={12}
           md={6}
