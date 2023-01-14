@@ -1,28 +1,48 @@
-/* eslint-disable no-console */
 import React, { useState }  from 'react';
+import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import {createUserWithEmailAndPassword} from "firebase/auth"
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
-import{auth} from "../../config/fire"
+import { collection, addDoc } from "firebase/firestore"; 
+import LoginwithSocial from './loginwithSocial';
+import { auth, db } from "../../config/fire";
 import SignUpImg from '../../assets/images/SignupImage.png';
 import './signup.css';
 
+
 function SignUp() {
+  
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
+  const [registerName, setRegisterName] = useState("");
+  const [registerSurname, setRegisterSurname] = useState("");
+  const [registerbirthDate, setRegisterbirthDate] = useState("");
+  const register  = async (e) => { 
+    createUserWithEmailAndPassword(auth, registerEmail, registerPassword );
+     e.preventDefault();
+    addDoc(collection(db, "users"), {
+      name:registerName,
+      email:registerEmail,
+      surname:registerSurname,
+      password: registerPassword,
+      birthdate: registerbirthDate
+    })
+  
+    .then(() => {
+      alert('user created 👍' );
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
 
-  
-  const register = async () => {
-    try {
-  
-   const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword );
-   console.log(user)
-    }catch (error) {
-      console.log(error.message);
-    }
+    setRegisterName('');
+    setRegisterEmail('');
+    setRegisterSurname('');
+    setRegisterPassword('');
+    setRegisterbirthDate('');
   }
   return (
     <div className="container">
@@ -38,44 +58,44 @@ function SignUp() {
           <Card>
             <Form>
                 <Row>
-              <Form.Group className="mb-3"  as={Col}  md="6" controlId="formName">
-                <Form.Control type="text" placeholder="Your Name" />
+              <Form.Group className="mb-3"   as={Col}  md="6" controlId="formName">
+                <Form.Control  type="text" required placeholder="Your Name"  onChange={(event) => {setRegisterName(event.target.value)}} />
               </Form.Group>
               <Form.Group className="mb-3"  as={Col}  md="6" controlId="formLastName">
-                <Form.Control type="text" placeholder="Your Last Name" />           
+                <Form.Control type="text" required placeholder="Your Last Name"  onChange={(event) => {setRegisterSurname(event.target.value)}} />           
               </Form.Group>
 </Row>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control type="email" placeholder=" Your Email" onChange={(event) => {setRegisterEmail(event.target.value)}} />
+                <Form.Control type="email" required placeholder=" Your Email" onChange={(event) => {setRegisterEmail(event.target.value)}} />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail1">
-                <Form.Control type="email" placeholder=" Confirm Email" />
+                <Form.Control type="email" required placeholder=" Confirm Email"  />
               </Form.Group>
               <Row>
               <Form.Group className="mb-3"  as={Col}  md="6" controlId="formPassword">
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control type="password" required placeholder="Password" />
               </Form.Group>
               <Form.Group className="mb-3"  as={Col}  md="6" controlId="formPassword1">
-                <Form.Control type="password" placeholder="Confirm Password"  onChange={(event) => {setRegisterPassword(event.target.value)}}/>           
+                <Form.Control type="password"  required placeholder="Confirm Password"  onChange={(event) => {setRegisterPassword(event.target.value)}}/>           
               </Form.Group>
 </Row>
 
-       <Form.Group as={Row} className="mb-3" controlId="birthDate">
+       <Form.Group as={Row} className="mb-3"  controlId="birthDate">
                 <Form.Label column sm={4}>
                 Birth Date
               </Form.Label>   <Col sm={8}>
-                <Form.Control type="date" placeholder="" />
+                <Form.Control required type="date" placeholder=""  onChange={(event) => {setRegisterbirthDate(event.target.value)}} />
               </Col></Form.Group>
-              <Button  onClick={register} variant="primary" className="button-signup" type="submit">
-                Submit
+            <Button  onClick={register}  variant="signup" className="btn-signup bg-info" type="submit"> 
+              <Link to="/sign-up-thanks" className="text-white text-decoration-none">Submit</Link> 
               </Button>
-              
+               <LoginwithSocial />
             </Form>
           </Card>
         </div>
       </div>
     </div>
+   
   );
 }
-
-export default SignUp;
+export default SignUp; 

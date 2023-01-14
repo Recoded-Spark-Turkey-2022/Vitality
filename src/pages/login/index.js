@@ -4,7 +4,8 @@ import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword,
+        onAuthStateChanged} from 'firebase/auth';
 import {auth} from "../../config/fire"
 
 import  Logo  from '../../assets/images/login-image.png';
@@ -15,6 +16,11 @@ import './login.css';
 function Login() {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+
+  const[setUser] = useState({});
+  onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+  })
   const login = async () => {
     try {
       const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword );
@@ -23,11 +29,16 @@ function Login() {
          console.log(error.message);
        }
   }
- 
+  
   return (
     <div className="container">
       <div className='mb-5'>
         <h1>LOGIN</h1>
+        
+        <div className='mb-5'>
+        <h4>User logged In</h4>
+        
+      </div>
       </div>
   <div className="row">
     <div className="col">
@@ -45,7 +56,7 @@ function Login() {
       </Form.Group>
       
       <Button variant="primary" type="submit" onClick={login} >
-        Submit
+       Login
       </Button>
       <Link to="/sign-up"><Button variant="secondary" type="submit">
       Signup 
