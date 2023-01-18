@@ -19,6 +19,8 @@ import EnrollHome from './components/Counselor/EnrollHome';
 import Requirements from './components/Counselor/Requirements';
 import CreateAccount from './components/Counselor/CreateAccount';
 import ThankYou from './components/Counselor/ThankYou';
+import BlogDetail from './pages/blogDetail';
+
 
 function App() {
   return (
@@ -39,6 +41,8 @@ function App() {
         <Route path="/requirements" element={<Requirements />} />
         <Route path="/createAccount" element={<CreateAccount />} />
         <Route path="/thankYou" element={<ThankYou />} />
+        <Route path="blogs/:id" element={<BlogDetail />} />
+
 
 
 

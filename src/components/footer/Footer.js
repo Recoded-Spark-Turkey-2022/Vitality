@@ -4,7 +4,7 @@ import './footer.css';
 function Footer() {
   return (
     <div className=" footer " >
-      <div className="container footer   d-flex justify-content-between align-items-center justify-content-center  ">
+      <div className="container footer d-md-flex justify-content-between align-items-center justify-content-center  ">
         <div className="subscribe d-flex flex-column gap-4">
           <h2 className=" text-xl">Subscribe</h2>
           <p>We’ll never to spam you or share your email</p>
