@@ -22,3 +22,14 @@
     height: 305px   ;
 }
 
+.bg-blog {
+   
+    background: #EAF8F9;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .slick-prev:before , .slick-next:before {
+display: none;    }
+  }
+

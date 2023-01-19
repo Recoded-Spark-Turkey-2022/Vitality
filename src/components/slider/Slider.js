@@ -7,18 +7,14 @@ import './slider.css';
 import { blogs } from '../../data/blog/blog';
 
 export default function SimpleSlider() {
-
-
   console.log(blogs);
 
   const blogItems = blogs.map((blog) => {
     return (
       <div key={blog.id}>
-           <Link to={`/blogs/${blog.id}`}>
-
-           <img src={blog.image} alt={blog.title} />
-
-           </Link>
+        <Link to={`/blogs/${blog.id}`}>
+          <img src={blog.image} alt={blog.title} />
+        </Link>
       </div>
     );
   });
@@ -44,9 +40,11 @@ export default function SimpleSlider() {
     ],
   };
   return (
-    <div className="blog-container">
-      <h2>RECENT BLOGS</h2>
-      <Slider {...settings}>{blogItems}</Slider>
+    <div className="bg-blog mb-5" >
+      <div className="blog-container container">
+        <h2>RECENT BLOGS</h2>
+        <Slider {...settings}>{blogItems}</Slider>
+      </div>
     </div>
   );
 }
