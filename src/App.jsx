@@ -14,7 +14,8 @@ import Login from './pages/login';
 import NotFound from './pages/notFound';
 import Team from './pages/team';
 import ViewProfile from './pages/viewProfile';
-
+import SignUp from './pages/SignUp';
+import SignUpThanks from './pages/SignUp/SignUpThanks';
 import EnrollHome from './components/Counselor/EnrollHome';
 import Requirements from './components/Counselor/Requirements';
 import CreateAccount from './components/Counselor/CreateAccount';
@@ -36,6 +37,8 @@ function App() {
         <Route path="/requirements"  element={<Requirements/>} />
         <Route path="/edit-profile"  element={<EditProfile/>} />
         <Route path="/view-profile"  element={<ViewProfile/>} />
+        <Route path="/sign-up"  element={<SignUp/>} />
+        <Route path="/sign-up-thanks" element={<SignUpThanks />} />
         <Route path="/edit-thanks"  element={<EditThanks/>} />
         <Route path="/enroll-home" element={<EnrollHome />} />
         <Route path="/requirements" element={<Requirements />} />
