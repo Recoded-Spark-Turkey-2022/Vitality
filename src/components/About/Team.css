@@ -1,0 +1,42 @@
+.team > div {
+    background-color: #EAF8F9;
+    width: 180px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+    margin-top: 4%;
+    border-color: white;
+  }
+  
+  
+  img {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+  }
+
+  .team{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 8%;
+    margin-right: 8%;
+   
+  }
+  .hr{
+    background-color: #6BD24D;
+    width: 180px;
+    margin-left: -13px;
+    margin-top: -1px;
+    height: 10px;
+    color: #6BD24D;
+    font-size: x-small;
+  }
+  h1{
+    margin-left: 8%;
+  }
+  h2{
+    margin-left: 8%;
+  }
+
+  
