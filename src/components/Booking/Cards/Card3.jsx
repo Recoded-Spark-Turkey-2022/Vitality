@@ -1,23 +1,24 @@
 import React, {useState} from 'react'
-import { useNavigate } from "react-router-dom";
 
-function Card3() {
 
-    // With this state, we will track the user's selection
-    const [selected, setSelected] = useState("")
+function Card3({btnClick}) {
 
-    const navigate = useNavigate()
+   
+  const [selected, setSelected] = useState("")
 
-    function handleClick() {
-      navigate("/card4")
+  function handleClick(){
+    if(selected === ""){
+        console.log("Error!", "Please select an answer for this question!!");
+    }else{
+        btnClick()
     }
-
+}
   return (
     <div className='border border-solid border-gray-200 h-96 w-full md:w-5/6 lg:w-4/6 px-2 md:px-10 py-5 flex flex-col justify-between items-start rounded-md shadow-xl flex-wrap'>
 
         <div className='h-1/6'>
             <h2 className='text-2xl font-medium'>
-                Have You Ever Been In Therspy Before?
+                Have You Ever Been In Therapy Before?
             </h2>
         </div>
 

@@ -1,13 +1,13 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom";
 
-function Card7() {
+function Card7({btnClick}) {
+  
+  function handleClick(){
+  
+    btnClick()
 
-  const navigate = useNavigate()
+  }
 
-        function handleClick() {
-          navigate("/card8")
-        }
 
   return (
     

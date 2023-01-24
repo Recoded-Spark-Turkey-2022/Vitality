@@ -1,15 +1,19 @@
 import React, {useState} from 'react'
-import { useNavigate } from "react-router-dom";
 
-function Card1() {
+function Card1({btnClick}) {
 
     // With this state, we will track the user's selection
     const [selected, setSelected] = useState("")
-    const navigate = useNavigate()
+    
 
-    function handleClick() {
-      navigate("/card2")
-    }
+    function handleClick(){
+      if(selected === ""){
+          console.log("Error!", "Please select an answer for this question!!");
+
+      }else{
+          btnClick()
+      }
+  }
   return (
     <div className='border border-solid border-gray-200 h-96 w-full md:w-5/6 lg:w-4/6 px-2 md:px-10 py-5 flex flex-col justify-between items-start rounded-md shadow-xl flex-wrap'>
 

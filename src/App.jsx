@@ -50,13 +50,6 @@ function App() {
         <Route path="/thankYou" element={<ThankYou />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/booking-home" element={<BookingHome />} />
-        <Route path="/card2" element={<Card2 />} />
-        <Route path="/card3" element={<Card3 />} />
-        <Route path="/card4" element={<Card4 />} />
-        <Route path="/card5" element={<Card5 />} />
-        <Route path="/card6" element={<Card6 />} />
-        <Route path="/card7" element={<Card7 />} />
-        <Route path="/card8" element={<Card8 />} />
 
 
         <Route component={<NotFound/>} />

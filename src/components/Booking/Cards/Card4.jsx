@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
-import { useNavigate } from "react-router-dom";
 
-function Card4() {
+function Card4({btnClick}) {
 
     const [preference, setPreference] = useState("")
 
@@ -9,10 +8,13 @@ function Card4() {
             setPreference(e.target.value)
         }
 
-        const navigate = useNavigate()
 
-        function handleClick() {
-          navigate("/card5")
+        function handleClick(){
+            if(preference === ""){
+                console.log("Error!", "Please select an answer for this question!!");
+            }else{
+                btnClick()
+            }
         }
 
   return (
