@@ -6,18 +6,20 @@ function Card1() {
     const [selected, setSelected] = useState("")
 
 
-    function handleClick(){
-        if(selected === ""){
-            console.log("Error!", "Please select an answer for this question!!");
+    function handleClick(arg) {
+        if (arg === 'inc' && selected < 2) {
+          setSelected((prev) => prev + 1);
+        } else if (arg === 'dec' && selected > 0) {
+          setSelected((prev) => prev - 1);
         }
-    }
+      };
 
   return (
     <div className='border border-solid border-gray-200 h-96 w-full md:w-5/6 lg:w-4/6 px-2 md:px-10 py-5 flex flex-col justify-between items-start rounded-md shadow-xl flex-wrap'>
 
         <div className='h-1/6'>
             <h2 className='text-2xl font-medium'>
-                What Type Of Coumseling Are You Looking For?
+                What Type Of Counseling Are You Looking For?
             </h2>
         </div>
 
@@ -45,7 +47,7 @@ function Card1() {
             type="button" 
             value="NEXT" 
             className='py-2 px-5 hover:bg-cyan-200 bg-cyan-400 font-medium rounded'
-            onClick={() => handleClick()} />
+            onClick={() => handleClick('inc')} />
         </div>
     </div>
   )

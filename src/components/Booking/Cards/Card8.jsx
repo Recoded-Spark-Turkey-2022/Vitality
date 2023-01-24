@@ -1,9 +1,14 @@
 import React from 'react'
+import {useNavigate} from "react-router-dom"
+
+
 
 function Card8() {
+  const navigate = useNavigate()
 
 
   function handleClick(){
+    navigate("/")
   }
 
   return (
