@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { useNavigate } from "react-router-dom";
 
 function Card5() {
     const [preference, setPreference] = useState("")
@@ -7,10 +8,10 @@ function Card5() {
             setPreference(e.target.value)
         }
 
-        function handleClick(){
-            if(preference === ""){
-                console.log("Error!", "Please select an answer for this question!!");
-            }
+        const navigate = useNavigate()
+
+        function handleClick() {
+          navigate("/card6")
         }
 
   return (

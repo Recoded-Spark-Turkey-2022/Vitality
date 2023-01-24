@@ -1,8 +1,13 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 
 function Card7() {
 
-  function handleClick(){}
+  const navigate = useNavigate()
+
+        function handleClick() {
+          navigate("/card8")
+        }
 
   return (
     

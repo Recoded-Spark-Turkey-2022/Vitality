@@ -1,19 +1,15 @@
 import React, {useState} from 'react'
+import { useNavigate } from "react-router-dom";
 
 function Card1() {
 
     // With this state, we will track the user's selection
     const [selected, setSelected] = useState("")
+    const navigate = useNavigate()
 
-
-    function handleClick(arg) {
-        if (arg === 'inc' && selected < 2) {
-          setSelected((prev) => prev + 1);
-        } else if (arg === 'dec' && selected > 0) {
-          setSelected((prev) => prev - 1);
-        }
-      };
-
+    function handleClick() {
+      navigate("/card2")
+    }
   return (
     <div className='border border-solid border-gray-200 h-96 w-full md:w-5/6 lg:w-4/6 px-2 md:px-10 py-5 flex flex-col justify-between items-start rounded-md shadow-xl flex-wrap'>
 
@@ -47,7 +43,7 @@ function Card1() {
             type="button" 
             value="NEXT" 
             className='py-2 px-5 hover:bg-cyan-200 bg-cyan-400 font-medium rounded'
-            onClick={() => handleClick('inc')} />
+            onClick={() => handleClick()} />
         </div>
     </div>
   )

@@ -21,6 +21,13 @@ import CreateAccount from './components/Counselor/CreateAccount';
 import ThankYou from './components/Counselor/ThankYou';
 import Booking from "./components/Booking/Booking";
 import BookingHome from './components/Booking/BookingHome';
+import Card2 from "./components/Booking/Cards/Card2";
+import Card3 from "./components/Booking/Cards/Card3";
+import Card4 from "./components/Booking/Cards/Card4";
+import Card5 from "./components/Booking/Cards/Card5";
+import Card6 from "./components/Booking/Cards/Card6";
+import Card7 from "./components/Booking/Cards/Card7";
+import Card8 from "./components/Booking/Cards/Card8";
 
 function App() {
   return (
@@ -43,7 +50,13 @@ function App() {
         <Route path="/thankYou" element={<ThankYou />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/booking-home" element={<BookingHome />} />
-
+        <Route path="/card2" element={<Card2 />} />
+        <Route path="/card3" element={<Card3 />} />
+        <Route path="/card4" element={<Card4 />} />
+        <Route path="/card5" element={<Card5 />} />
+        <Route path="/card6" element={<Card6 />} />
+        <Route path="/card7" element={<Card7 />} />
+        <Route path="/card8" element={<Card8 />} />
 
 
         <Route component={<NotFound/>} />

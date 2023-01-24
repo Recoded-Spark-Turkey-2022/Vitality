@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { useNavigate } from "react-router-dom";
 
 function Card6() {
 
@@ -9,12 +10,11 @@ function Card6() {
         setText(e.target.value)
     }
 
-    function handleClick(){
-        
-        if(text === ""){
-            console.log("Error!", "This part can not be empty!!");
+    const navigate = useNavigate()
+
+        function handleClick() {
+          navigate("/card7")
         }
-    }
 
   return (
     <div className='border border-solid border-gray-200 h-96 w-full md:w-5/6 lg:w-4/6 px-2 md:px-10 py-5 flex flex-col justify-between items-start rounded-md shadow-xl flex-wrap wrap'>

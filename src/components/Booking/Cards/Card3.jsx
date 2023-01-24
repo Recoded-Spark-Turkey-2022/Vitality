@@ -1,15 +1,15 @@
 import React, {useState} from 'react'
+import { useNavigate } from "react-router-dom";
 
 function Card3() {
 
     // With this state, we will track the user's selection
     const [selected, setSelected] = useState("")
 
-    // With this dispatch, we will save user's selection to our store. Later, we will use these answers to update our firebase db
-    function handleClick(){
-        if(selected === ""){
-            console.log("Error!", "Please select an answer for this question!!");
-        }
+    const navigate = useNavigate()
+
+    function handleClick() {
+      navigate("/card4")
     }
 
   return (
