@@ -1,12 +1,12 @@
 import React from "react";
-import Allan from "./About-imges/Allan.jpg";
+import Allan from './Team_imges/Allan.jpg';
 import './Team.css'
 
-function About2() {
+function Team() {
     return(
         <div >
-          <h1 className=" text-3xl mt-14 ">WE ARE HEALING, NICE TO MEET YOU!</h1>
-           <h2 className=" text-[#424A4F] mt-16 fw-bold">Meet the Team!</h2>
+          <h1 className="  text-5xl mt-14 ">WE ARE HEALING, NICE TO MEET YOU!</h1>
+           <h2 className="text-[#424A4F] mt-16 text-4xl">Meet the Team!</h2>
            <div className ="team ">
   
       <div className="card">
@@ -65,4 +65,4 @@ function About2() {
 }
 
 
-export default About2;
+export default Team;
