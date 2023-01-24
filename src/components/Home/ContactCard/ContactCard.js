@@ -10,7 +10,7 @@ function ContactCard (){
         <h1>we can communicate through</h1>
         <div className="card_cont">
              <div className="card">
-          <img src={Call} alt="Avatar" />
+          <img src={Call} alt="Avatar" className="img1" />
              <div className="container">
               
                  <h2><b>Voice Call</b></h2>
@@ -18,7 +18,7 @@ function ContactCard (){
               </div>
         </div>
         <div className="card">
-          <img src={Chat} alt="Avatar" />
+          <img src={Chat} alt="Avatar" className="img1" />
              <div className="container">
               
                  <h2><b>Chat</b></h2>
@@ -26,7 +26,7 @@ function ContactCard (){
               </div>
         </div>
         <div className="card">
-          <img src={video} alt="Avatar" />
+          <img src={video} alt="Avatar" className="img1" />
              <div className="container">
               
                  <h2><b>Video Call</b></h2>
