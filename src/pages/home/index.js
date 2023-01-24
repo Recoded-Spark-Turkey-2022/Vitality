@@ -1,12 +1,14 @@
-import React from 'react'
-import EnrollHome from "../../components/Counselor/EnrollHome"
+import React from 'react';
+import EnrollHome from '../../components/Counselor/EnrollHome';
+import SimpleSlider from '../../components/slider/Slider';
 
 function Home() {
   return (
-
-      <EnrollHome/>
-  
-  )
+    <>
+      <SimpleSlider />
+      <EnrollHome />
+    </>
+  );
 }
 
-export default Home
+export default Home;

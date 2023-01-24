@@ -7,8 +7,9 @@ import logo from '../../assets/images/logo.png';
 function Navbar() {
   
   return (
-  
 
+
+    
     <div className="bg-navbar fixed-top margin-bottom">
       <nav
         className="navbar navbar-expand-sm  
