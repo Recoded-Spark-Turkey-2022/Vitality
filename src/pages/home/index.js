@@ -3,6 +3,7 @@ import EnrollHome from "../../components/Counselor/EnrollHome"
 import BookingHome from '../../components/Booking/BookingHome'
 import SimpleSlider from '../../components/slider/Slider';
 import ContactCard from '../../components/ContactCard/ContactCard'
+import PurchaseHome from '../../components/Purchase/PurchaseHome'
 
 function Home() {
   return (
@@ -10,6 +11,7 @@ function Home() {
       <BookingHome />
       <ContactCard />
       <SimpleSlider />
+      <PurchaseHome />
       <EnrollHome/>
     </>
   );

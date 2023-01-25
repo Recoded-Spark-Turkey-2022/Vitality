@@ -23,7 +23,8 @@ import ThankYou from './components/Counselor/ThankYou';
 import Booking from "./components/Booking/Booking";
 import BookingHome from './components/Booking/BookingHome';
 import BlogDetail from './pages/blogDetail';
-
+import SelectCard from './components/SelectCard/SelectCard';
+import PurchaseThanks from './components/Purchase/PurchaseThanks';
 
 function App() {
   return (
@@ -49,6 +50,8 @@ function App() {
         <Route path="/booking" element={<Booking />} />
         <Route path="/booking-home" element={<BookingHome />} />
         <Route path="blogs/:id" element={<BlogDetail />} />
+        <Route path="/select-card" element={<SelectCard />} />
+        <Route path="/purchase-thanks" element={<PurchaseThanks />} />
 
 
 
