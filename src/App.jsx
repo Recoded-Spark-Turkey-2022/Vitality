@@ -7,27 +7,23 @@ import EditThanks from './components/editThanks/EditThanks';
 import MainLayout from './components/layouts/MainLayout';
 import About from './pages/about';
 import Blogs from './pages/blogs';
-import Contact from './pages/contact';
+import Contact from './pages/contact/Contact';
 import EditProfile from './pages/editProfile';
 import Home from './pages/home';
 import Login from './pages/login';
 import NotFound from './pages/notFound';
-import Team from './pages/team';
+import Team from './pages/team/Team';
 import ViewProfile from './pages/viewProfile';
-
+import SignUp from './pages/SignUp';
+import SignUpThanks from './pages/SignUp/SignUpThanks';
 import EnrollHome from './components/Counselor/EnrollHome';
 import Requirements from './components/Counselor/Requirements';
 import CreateAccount from './components/Counselor/CreateAccount';
 import ThankYou from './components/Counselor/ThankYou';
 import Booking from "./components/Booking/Booking";
 import BookingHome from './components/Booking/BookingHome';
-import Card2 from "./components/Booking/Cards/Card2";
-import Card3 from "./components/Booking/Cards/Card3";
-import Card4 from "./components/Booking/Cards/Card4";
-import Card5 from "./components/Booking/Cards/Card5";
-import Card6 from "./components/Booking/Cards/Card6";
-import Card7 from "./components/Booking/Cards/Card7";
-import Card8 from "./components/Booking/Cards/Card8";
+import BlogDetail from './pages/blogDetail';
+
 
 function App() {
   return (
@@ -43,6 +39,8 @@ function App() {
         <Route path="/requirements"  element={<Requirements/>} />
         <Route path="/edit-profile"  element={<EditProfile/>} />
         <Route path="/view-profile"  element={<ViewProfile/>} />
+        <Route path="/sign-up"  element={<SignUp/>} />
+        <Route path="/sign-up-thanks" element={<SignUpThanks />} />
         <Route path="/edit-thanks"  element={<EditThanks/>} />
         <Route path="/enroll-home" element={<EnrollHome />} />
         <Route path="/requirements" element={<Requirements />} />
@@ -50,6 +48,9 @@ function App() {
         <Route path="/thankYou" element={<ThankYou />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/booking-home" element={<BookingHome />} />
+        <Route path="blogs/:id" element={<BlogDetail />} />
+
+
 
 
         <Route component={<NotFound/>} />
