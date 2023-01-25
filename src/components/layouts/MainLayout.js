@@ -11,7 +11,7 @@ function MainLayout() {
     <div className="d-flex flex-column main-layout">
       <Navbar />
 
-      <div className=" container margin-top ">
+      <div className="  margin-top ">
         <Outlet />
       </div>
 
