@@ -15,20 +15,20 @@
     border-radius: 10%;
     text-align: center;
 }
-h2{
+.header{
     font-size: xx-large;
     font-family: 'Poppins';
     font-weight: 400;
     text-align: center;
     
 }
-p{
+.parag{
     color: #0000008A;
     margin-top: 5%;
     margin-right: 10%;
     margin-left: 10%;
 }
-h1{
+.header1{
     font-size: 70px;
     margin-bottom: 5%;
     

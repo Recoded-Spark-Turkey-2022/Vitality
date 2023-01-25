@@ -7,12 +7,15 @@
     font-size: 30px;
     margin-top: 4%;
     border-color: white;
+    border-radius: 15%;
   }
   
   
   .img {
-    border-radius: 5px 5px 0 0;
+    border-radius: 20% 20% 0 0 ;
     width: 100%;
+    max-height: 170px;
+    object-fit: cover;
   }
 
   .team{
@@ -21,6 +24,7 @@
     align-items: center;
     margin-left: 8%;
     margin-right: 8%;
+    margin-bottom: 10%;
    
   }
   .hr{
@@ -32,11 +36,30 @@
     color: #6BD24D;
     font-size: x-small;
   }
-  h1{
+  .h1{
     margin-left: 8%;
+    margin-top: 5%;
+    
   }
-  h2{
+  .h2{
     margin-left: 8%;
+    color: 
+    #424A4F;
+    margin-top: 15%;
+  }
+
+  .h4{
+   margin-top: 10%;
+    font-size: large ;
+  }
+  .p{
+    font-size: large;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 30%;
+    margin-bottom: 50%;
+    color: 
+    #424A4F;
   }
 
   
