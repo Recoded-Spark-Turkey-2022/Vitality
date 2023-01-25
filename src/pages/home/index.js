@@ -8,9 +8,9 @@ function Home() {
   return (
     <>
       <BookingHome />
-      <EnrollHome/>
       <ContactCard />
       <SimpleSlider />
+      <EnrollHome/>
     </>
   );
 }
