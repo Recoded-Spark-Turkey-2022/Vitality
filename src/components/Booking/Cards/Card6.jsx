@@ -1,9 +1,12 @@
 import React, {useState} from 'react'
+import { useDispatch  } from 'react-redux';
+import {setAnswer6} from "../../../features/booking/bookingSlice"
+
 
 function Card6({btnClick}) {
 
     const [text, setText] = useState("")
-    
+    const dispatch = useDispatch()
 
     function handleChange(e) {
         setText(e.target.value)
@@ -14,6 +17,7 @@ function Card6({btnClick}) {
         if(text === ""){
             console.log("Error!", "This part can not be empty!!");
         }else{
+            dispatch(setAnswer6(text))
             btnClick()
         }
     }

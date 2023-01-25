@@ -1,9 +1,12 @@
 import React from 'react'
+import {useSelector} from "react-redux"
 
 function Card7({btnClick}) {
   
+  const answers = useSelector((state) => state.booking.answers)
+
   function handleClick(){
-  
+    sendData(answers)
     btnClick()
 
   }
