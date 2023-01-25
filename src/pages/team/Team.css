@@ -25,6 +25,7 @@
     margin-left: 8%;
     margin-right: 8%;
     margin-bottom: 10%;
+    margin-top: 5%;
    
   }
   .hr{
@@ -34,7 +35,7 @@
     margin-top: -1px;
     height: 10px;
     color: #6BD24D;
-    font-size: x-small;
+    font-size: xx-small;
   }
   .h1{
     margin-left: 8%;
@@ -62,4 +63,6 @@
     #424A4F;
   }
 
-  
+.hr1{
+  font-size: xx-small;
+}

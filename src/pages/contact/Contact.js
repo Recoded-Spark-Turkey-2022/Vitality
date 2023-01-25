@@ -36,9 +36,9 @@ function Contact (){
                      <button type="submit" className="btn btn btn-info bg-[#2DD3E3] -mt-8 w-56">Submit</button>
                 </div>
                 <div className=" second ">
-                    <div className="card  bg-[#EAF8F9] border border-0" >
+                    <div className="border" >
                     <div className="card-body  ">
-                    <h1 className=" text-lg mb-3 -mt-1 ml-11">Find Us At:</h1><br/>
+                    <h1 className=" text-lg mb-3 mt-3 ml-11">Find Us At:</h1><br/>
                     <p className="text-[#0000008A] -mb-6 ml-11">Nergiz Plaza</p><br/>
                     <p className="text-[#0000008A] -mb-6 ml-11">3rd Floor</p><br/>
                     <p className="text-[#0000008A] -mb-6 ml-11">Bakhtiyari Street 40m</p><br/>

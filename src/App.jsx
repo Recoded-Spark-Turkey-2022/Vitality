@@ -1,42 +1,64 @@
 import React from 'react';
+
+import { Route, Routes ,BrowserRouter} from 'react-router-dom';
+
 import './App.css';
-
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-
-import About from './components/About/About'
-import Team from './components/team/Team'
-import Contact from './components/contact/Contact' ;
-import ContactCard from './components/Home/ContactCard/ContactCard';
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <div>Home</div>,
-  },  {
-    path: "/About",
-    element: < About /> ,
-  },{
-    path: "/Team",
-    element: < Team /> ,
-  },{
-    path: "/Contact",
-    element: < Contact /> ,
-  },{
-    path: "/ContactCard",
-    element: < ContactCard /> ,
-  },
-]);
+import EditThanks from './components/editThanks/EditThanks';
+import MainLayout from './components/layouts/MainLayout';
+import About from './pages/about';
+import Blogs from './pages/blogs';
+import Contact from './pages/contact/Contact';
+import EditProfile from './pages/editProfile';
+import Home from './pages/home';
+import Login from './pages/login';
+import NotFound from './pages/notFound';
+import Team from './pages/team/Team';
+import ViewProfile from './pages/viewProfile';
+import SignUp from './pages/SignUp';
+import SignUpThanks from './pages/SignUp/SignUpThanks';
+import EnrollHome from './components/Counselor/EnrollHome';
+import Requirements from './components/Counselor/Requirements';
+import CreateAccount from './components/Counselor/CreateAccount';
+import ThankYou from './components/Counselor/ThankYou';
+import Booking from "./components/Booking/Booking";
+import BookingHome from './components/Booking/BookingHome';
+import BlogDetail from './pages/blogDetail';
 
 
 function App() {
   return (
-    <div>
-     
-     <RouterProvider router={router} />
-    </div>
+    <BrowserRouter>
+     <Routes>
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Home />} exact />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/about"  element={<About />} />
+        <Route path="/team"  element={<Team/>} />
+        <Route path="/contact"  element={<Contact/>} />
+        <Route path="/login"  element={<Login/>} />
+        <Route path="/requirements"  element={<Requirements/>} />
+        <Route path="/edit-profile"  element={<EditProfile/>} />
+        <Route path="/view-profile"  element={<ViewProfile/>} />
+        <Route path="/sign-up"  element={<SignUp/>} />
+        <Route path="/sign-up-thanks" element={<SignUpThanks />} />
+        <Route path="/edit-thanks"  element={<EditThanks/>} />
+        <Route path="/enroll-home" element={<EnrollHome />} />
+        <Route path="/requirements" element={<Requirements />} />
+        <Route path="/createAccount" element={<CreateAccount />} />
+        <Route path="/thankYou" element={<ThankYou />} />
+        <Route path="/booking" element={<Booking />} />
+        <Route path="/booking-home" element={<BookingHome />} />
+        <Route path="blogs/:id" element={<BlogDetail />} />
+
+
+
+
+        <Route component={<NotFound/>} />
+      </Route>
+    </Routes>
+    
+    </BrowserRouter>
+   
   );
 }
 
