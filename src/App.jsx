@@ -20,6 +20,8 @@ import EnrollHome from './components/Counselor/EnrollHome';
 import Requirements from './components/Counselor/Requirements';
 import CreateAccount from './components/Counselor/CreateAccount';
 import ThankYou from './components/Counselor/ThankYou';
+import Booking from "./components/Booking/Booking";
+import BookingHome from './components/Booking/BookingHome';
 import BlogDetail from './pages/blogDetail';
 
 
@@ -44,6 +46,8 @@ function App() {
         <Route path="/requirements" element={<Requirements />} />
         <Route path="/createAccount" element={<CreateAccount />} />
         <Route path="/thankYou" element={<ThankYou />} />
+        <Route path="/booking" element={<Booking />} />
+        <Route path="/booking-home" element={<BookingHome />} />
         <Route path="blogs/:id" element={<BlogDetail />} />
 
 
