@@ -8,6 +8,7 @@
     margin-top: 4%;
     border-color: white;
     border-radius: 15%;
+    max-height: 375px;
   }
   
   
@@ -36,6 +37,7 @@
     height: 10px;
     color: #6BD24D;
     font-size: xx-small;
+    margin-bottom: 4%;
   }
   .h1{
     margin-left: 8%;
@@ -45,12 +47,12 @@
   .h2{
     margin-left: 8%;
     color: 
-    #424A4F;
+ #424A4F;
     margin-top: 15%;
   }
 
   .h4{
-   margin-top: 10%;
+    margin-top: 15%;
     font-size: large ;
   }
   .p{
@@ -59,6 +61,8 @@
     line-height: normal;
     margin-top: 30%;
     margin-bottom: 50%;
+    margin-right: auto;
+    margin-left: auto;
     color: 
     #424A4F;
   }
@@ -66,3 +70,4 @@
 .hr1{
   font-size: xx-small;
 }
+

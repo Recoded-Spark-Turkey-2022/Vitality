@@ -43,19 +43,19 @@ function Team() {
               </div>
       </div>
       <div className="">
-          <img src={Allan} alt="Avatar" className="img"/>
+          <img src='https://media.discordapp.net/attachments/1053646840035287161/1067811514746163270/Samet_Hozman_Turkey_2022.png' alt="Avatar" className="img"/>
              <div className="container">
              <div className="hr"><h1 className="hr1">t</h1></div>
-                 <h4 className="h4"><b>John Doe</b></h4>
+                 <h4 className="h4"><b>Samet Hozman</b></h4>
                   <p className="p">Front-end Developer&Teacher</p>
               </div>
       </div>
       <div className="">
-          <img src={Allan} alt="Avatar" className="img"/>
+          <img src="https://media.discordapp.net/attachments/1053628144315277362/1067811261712179291/IMG-20230125-WA0001.jpg?width=497&height=663" alt="Avatar" className="img"/>
              <div className="container">
              <div className="hr"><h1 className="hr1">t</h1></div>
-                 <h4 className="h4"><b>John Doe</b></h4>
-                  <p className="p">Front-end Developer& Engineer</p>
+                 <h4 className="h4"><b>Ömer Furkan Ataş</b></h4>
+                  <p className="p">Front-end Developer</p>
               </div>
       </div>
 </div>

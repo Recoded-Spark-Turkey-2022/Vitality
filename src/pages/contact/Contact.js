@@ -1,6 +1,9 @@
 import React from "react";
-import Group from "./Group-147.jpg"
 import './Contact.css'
+import { Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import Group from "./Group-147.jpg"
+
 
 function Contact (){
     return(
@@ -33,7 +36,9 @@ function Contact (){
                      <input type="Email" id="Email" name="Email"  placeholder="Enter your email address here..." className="box"/> <br/>
                      <h5 className=" -mb-2 -mt-2">Details:  </h5><br/>
                      <textarea id="Details" name="Details" placeholder="Enter your details here..." className="box"/> <br/>
-                     <button type="submit" className="btn btn btn-info bg-[#2DD3E3] -mt-8 w-56">Submit</button>
+                    <Link to='/thankYou'>
+                     <Button type="submit" className="btn btn btn-info bg-[#2DD3E3] -mt-8 w-56">Submit</Button>
+                     </Link>
                 </div>
                 <div className=" second ">
                     <div className="border" >
