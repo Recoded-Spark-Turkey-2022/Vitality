@@ -2,7 +2,7 @@ import React from 'react'
 import {useSelector} from "react-redux"
 import { v4 as uuidv4 } from 'uuid';
 import { doc, setDoc } from "firebase/firestore"; 
-import db from "../../../config/fire"
+import { db } from "../../../config/fire"
 
 function Card7({btnClick}) {
   
