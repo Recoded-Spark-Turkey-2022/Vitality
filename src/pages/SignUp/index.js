@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 import { collection, addDoc } from "firebase/firestore"; 
 import LoginwithSocial from './loginwithSocial';
-import { auth, db } from "../../config/fire";
+import db, { auth } from "../../config/fire";
 import SignUpImg from '../../assets/images/SignupImage.png';
 import './signup.css';
 
