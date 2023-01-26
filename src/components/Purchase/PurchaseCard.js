@@ -1,37 +1,45 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-function PurchaseCard(props) {
-    const { title, dollar, text, button, classList } = props;
-    return (
-      <div
-        className={
-          !classList
-            ? 'border border-solid w-72 lg:w-96 border-gray-200 rounded-lg shadow-xl'
-            : classList
-        }
-      >
-        <div className="flex flex-col m-6">
-          <h1 className="text-3xl font-semibold pt-12  flex flex-col items-center justify-center 2xl:text-5xl">
-            {title}
-          </h1>
-          <h2 className="text-gray-400 text-xl pt-3 font-medium flex flex-col items-center justify-center 2xl:text-3xl 2xl:py-8">
-            {dollar}
-          </h2>
-          <h2 className="text-base pt-2 font-normal 2xl:text-2xl pb-6">{text}</h2>
-  
-          <Link to="/select-card">
-          <div className="flex flex-col items-center justify-center pb-10 2xl:text-3xl 2xl:pb-12">
-            <input
-              type="button"
-              value={button}
-              className="py-2 px-7 hover:bg-cyan-200 bg-cyan-400 font-medium rounded"
-            />
-          </div>
-            </Link>
-        </div>
-      </div>
-    );
-  }
+function PurchaseCard({
+  image,
+  title,
+  content,
+  price,
+  ticket,
+  button,
+  buttonPreview,
+  imagePreview,
+  contentPreview,
+  titlePreview,
+}) {
+  return (
+    <div className="shadow-zinc-300 h-full w-full my-4 flex flex-col items-center justify-evenly shadow-lg  rounded-3xl md:m-12 p-4">
+      {imagePreview && <img className="pt-4  mb-4 " src={image} alt={title} />}
+      {titlePreview && (
+        <h1 className="pt-4 text-center md:text-xl lg:text-3xl   ">{title}</h1>
+      )}
+      {contentPreview && (
+        <p className="text-opacity-50 text-black text-center text-sm md:text-lg lg:text-lg py-4">
+          {content}
+        </p>
+      )}
+      <h2 className="text-2xl md:text-lg lg:text-2xl">{ticket}</h2>
+      <h2 className="text-2xl flex justify-center p-6 md:text-lg lg:text-2xl">
+        {price}
+      </h2>
+      {buttonPreview && (
+        <Link to="/purchase-thanks" state={price}>
+          <button
+            type="button"
+            className="font-poppins rounded-md box-border p-2 mb-4 transition-all duration-250 bg-cyan-400 hover:bg-cyan-500"
+          >
+            {button}
+          </button>
+        </Link>
+      )}
+    </div>
+  );
+}
 
 export default PurchaseCard;
