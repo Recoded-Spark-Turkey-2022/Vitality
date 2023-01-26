@@ -29,7 +29,7 @@ function PurchaseCard({
         {price}
       </h2>
       {buttonPreview && (
-        <Link to="/purchase-thanks" state={price}>
+        <Link to="/select-card" state={price}>
           <button
             type="button"
             className="font-poppins rounded-md box-border p-2 mb-4 transition-all duration-250 bg-cyan-400 hover:bg-cyan-500"
