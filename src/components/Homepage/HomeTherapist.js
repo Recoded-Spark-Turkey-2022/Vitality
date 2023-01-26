@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Col, Container, Image, Row } from 'react-bootstrap';
-import avatarIcon from '../../assets/images/avatar.png';
+import avatarIcon from '../../assets/Icon/videoCall.png';
 import './homeTherapist.css';
 
 const HomeTherapist = () => {
@@ -19,22 +19,22 @@ const HomeTherapist = () => {
             </Col>
           </Row>
           <Row className="p-4">
-            <Col xs={2} className="">
+            <Col xs={4} md={2} className="">
               <Image roundedCircle src={avatarIcon} className="avatar-icon" />
             </Col>
-            <Col xs={2} className="">
+            <Col xs={4} md={2} className="">
               <Image roundedCircle src={avatarIcon} className="avatar-icon" />
             </Col>
-            <Col xs={2} className="">
+            <Col xs={4} md={2} className="">
               <Image roundedCircle src={avatarIcon} className="avatar-icon" />
             </Col>
-            <Col xs={2} className="">
+            <Col xs={4} md={2} className="">
               <Image roundedCircle src={avatarIcon} className="avatar-icon" />
             </Col>
-            <Col xs={2} className="">
+            <Col xs={4} md={2} className="">
               <Image roundedCircle src={avatarIcon} className="avatar-icon" />
             </Col>
-            <Col xs={2} className="">
+            <Col xs={4} md={2}>
               <Image roundedCircle src={avatarIcon} className="avatar-icon" />
             </Col>
           </Row>
