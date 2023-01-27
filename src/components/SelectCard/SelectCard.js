@@ -65,13 +65,14 @@ const Slider2 = () => {
     };
    
     return (
-<div className="h-full w-full flex flex-col justify-between items-center ">
-        <div className="w-full px-5 py-10 lg:pb-20 lg:px-32 xl:px-64 flex flex-col justify-evenly gap-5">
-            <div className="h-full w-full flex flex-col md:items-center lg:items-start">
-                <h1 className="text-4xl font-normal 2xl:text-6xl my-4">SELECT CARD</h1>
-                <p className="text-lg text-gray-400 2xl:text-xl">Please select the card you want to buy the tickets with</p>
-            </div>
-        <div/>
+        <div className="flex flex-col font-poppins lg:mt-20 mt-10">
+        <div className="lg:text-5xl md:text-3xl text-xl lg:ml-52 ml-10">
+          <h1>SELECT CARD</h1>
+        </div>
+        <div className="lg:text-xl md:text-base text-sm text-SubTexts mt-4 lg:ml-52 ml-10 lg:mr-0 mr-16">
+          Please select the card you want to buy the tickets with
+        </div>
+
   <div className="my-6 flex justify-center">
         <Slider
         {...settings}
@@ -86,18 +87,22 @@ const Slider2 = () => {
    </div>
  
    
-        <p className="text-xl font-medium my-2">Click Confirm To Use The Selected Card To Purchase 5 Tickets For 10$</p>
-   
-
-    <div className="w-full px-5 py-10 lg:pb-20 lg:pl-20 xl:px-20 flex  justify-evenly ">
-      <Link  to="/purchase-thanks">
-      <Button type='button' classes="py-2 px-5 hover:bg-cyan-200 bg-cyan-400 font-medium rounded text-sm md:text-lg">CONFIRM PURCHASE</Button>
-      </Link>
-  </div>
+   <div className="lg:text-2xl md:text-xl text-base lg:mt-20 mt-12 self-center capitalize lg:ml-0 ml-10 lg:mr-0 mr-10">
+        Click confirm to use the selected card to purchase 5 tickets for 10 $
+      </div>
+      <div className="self-center lg:mt-12 mt-8 lg:mb-20 mb-10">
+        <Link to="/purchase-thanks">
+          <Button
+            type="button"
+            className="rounded-md box-border p-2 lg:pl-6 lg:pr-6 lg:text-lg md:text-base text-sm transition-all duration-250 bg-Buttons hover:bg-cyan-500 "
+          >
+            CONFIRM PURCHASE
+          </Button>
+        </Link>
+      </div>
 
 
      </div>
-</div>
     );
   };
 
