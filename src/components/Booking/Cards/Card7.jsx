@@ -1,13 +1,34 @@
 import React from 'react'
+import {useSelector} from "react-redux"
+import { v4 as uuidv4 } from 'uuid';
+import { doc, setDoc } from "firebase/firestore"; 
+import { db } from "../../../config/fire"
 
 function Card7({btnClick}) {
   
-  function handleClick(){
-  
-    btnClick()
+  async function sendData(obj){
+    
+    await setDoc(doc(db, "booking-client-list", uuidv4()), {
+      client: obj.answer1,
+      relationship: obj.answer2,
+      therspyBefore: obj.answer3,
+      counselor: obj.answer4,
+      issues: obj.answer5,
+      otherInfo: obj.answer6,
+    });
 
   }
 
+  // Need to read data from redux
+  const answers = useSelector((state) => state.booking.answers)
+
+  // Need to send the data in the redux to firebase
+  function handleClick(){
+  
+    sendData(answers)
+    btnClick()
+
+  }
 
   return (
     

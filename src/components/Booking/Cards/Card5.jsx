@@ -1,8 +1,11 @@
 import React, {useState} from 'react'
+import { useDispatch  } from 'react-redux';
+import {setAnswer5} from "../../../features/booking/bookingSlice"
 
 function Card5({btnClick}) {
-    const [preference, setPreference] = useState("")
 
+    const [preference, setPreference] = useState("")
+    const dispatch = useDispatch()
     
         function handleChange(e){
             setPreference(e.target.value)
@@ -12,6 +15,7 @@ function Card5({btnClick}) {
             if(preference === ""){
                 console.log("Error!", "Please select an answer for this question!!");
             }else{
+                dispatch(setAnswer5(preference))
                 btnClick()
             }
         }

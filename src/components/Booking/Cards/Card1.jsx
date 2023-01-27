@@ -1,17 +1,21 @@
 import React, {useState} from 'react'
+import { useDispatch  } from 'react-redux';
+import {setAnswer1} from "../../../features/booking/bookingSlice"
 
 function Card1({btnClick}) {
 
-    // With this state, we will track the user's selection
-    const [selected, setSelected] = useState("")
     
+    const [selected, setSelected] = useState("")
+    const dispatch = useDispatch()
+
 
     function handleClick(){
       if(selected === ""){
           console.log("Error!", "Please select an answer for this question!!");
 
       }else{
-          btnClick()
+        dispatch(setAnswer1(selected))
+        btnClick()
       }
   }
   return (
