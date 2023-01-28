@@ -1,7 +1,18 @@
-import React from 'react';
+import React ,{useState}from 'react';
+import { Link } from 'react-router-dom';
+
+import { createSubscribe } from '../../config/fire';
+
+
 import './footer.css';
 
 function Footer() {
+  const [registerForm, setregisterForm] = useState({});
+  function submit() {
+    
+    createSubscribe(registerForm);
+  }
+
   return (
     <div className=" footer " >
       <div className="container footer d-md-flex justify-content-between align-items-center justify-content-center  ">
@@ -9,15 +20,22 @@ function Footer() {
           <h2 className=" text-xl">Subscribe</h2>
           <p>We’ll never to spam you or share your email</p>
           <div>
-            <div className="input-group mb-3">
+            <form className="input-group mb-3">
               <input
                 type="text"
                 className="form-control sub-input"
                 placeholder="Enter your e-mail"
                 aria-label="Recipient's username"
                 aria-describedby="button-addon2"
+                onChange={(e) => {
+                  setregisterForm({  email: e.target.value });
+                }}
               />
+              <Link to="/edit-thanks">
               <button
+               onClick={() => {
+                submit();
+              }}
                 className="sub-btn d-flex align-items-center justify-content-center"
                 type="button"
                 id="button-addon2"
@@ -35,7 +53,9 @@ function Footer() {
                   />
                 </svg>
               </button>
-            </div>
+              </Link>
+             
+            </form>
           </div>
         </div>
         <div className="contact d-flex flex-column justify-content-between gap-4">
