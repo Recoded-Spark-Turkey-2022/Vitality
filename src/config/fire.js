@@ -41,11 +41,22 @@ async function updateUser(data) {
   updateDoc(examcollref, data);
 }
 
-async function getUserByEmail(email) {
-  const snapshot = await getDocs(collection(db, 'users'));
-  const docs = snapshot.docs.map((dd) => ({ ...dd.data(), id: dd.id }));
-  const docsFilter = docs.find((x) => x.email === email);
-  return docsFilter;
+async function getUserByEmail() {
+
+  const user = localStorage.getItem('user');
+   
+      const userObject = JSON.parse(user);
+      const userCol = collection(db, 'users');
+      const userSnapshot = await getDocs(userCol);
+      const userData = userSnapshot.docs
+        .map((x) => x.data())
+        .find((userD) => userD.email === userObject.email);
+  // const snapshot = await getDocs(collection(db, 'users'));
+  // const docs = snapshot.docs.map((dd) => ({ ...dd.data(), id: dd.id }));
+  // const docsFilter = docs.find((x) => x.email === email);
+  // return docsFilter;
+
+  return userData;
 }
 
 async function deleteUser(id) {
@@ -53,4 +64,13 @@ async function deleteUser(id) {
   await deleteDoc(doc(db, +path + id));
 }
 
-export { db, createUser, updateUser, getUserByEmail,deleteUser };
+async function createSubscribe(data) {
+  const docRef = await addDoc(collection(db, 'subscribe_mails'), {
+   
+    email: data.email,
+  
+  });
+  console.log('Document written with ID: ', docRef.id);
+}
+
+export { db, createUser, updateUser, getUserByEmail,deleteUser,createSubscribe };
