@@ -1,0 +1,35 @@
+.slick-prev:before{
+    color: black;
+    border:1px solid black;
+    content: '<';
+    padding: 5px;
+    line-height: 2;
+}
+
+.slick-next:before  {
+    color: black;
+    border:1px solid black;
+    content: '>';
+    padding: 5px;
+    line-height: 2;
+}
+
+
+
+.blog-container img {
+    width: 100%;
+    padding: 10px;
+    height: 305px   ;
+}
+
+.bg-blog {
+   
+    background: #EAF8F9;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .slick-prev:before , .slick-next:before {
+display: none;    }
+  }
+

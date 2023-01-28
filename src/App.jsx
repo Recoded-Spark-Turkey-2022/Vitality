@@ -1,17 +1,18 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+
+import { Route, Routes ,BrowserRouter} from 'react-router-dom';
 
 import './App.css';
 import EditThanks from './components/editThanks/EditThanks';
 import MainLayout from './components/layouts/MainLayout';
 import About from './pages/about';
 import Blogs from './pages/blogs';
-import Contact from './pages/contact';
+import Contact from './pages/contact/Contact';
 import EditProfile from './pages/editProfile';
 import Home from './pages/home';
 import Login from './pages/login';
 import NotFound from './pages/notFound';
-import Team from './pages/team';
+import Team from './pages/team/Team';
 import ViewProfile from './pages/viewProfile';
 import SignUp from './pages/SignUp';
 import SignUpThanks from './pages/SignUp/SignUpThanks';
@@ -19,11 +20,15 @@ import EnrollHome from './components/Counselor/EnrollHome';
 import Requirements from './components/Counselor/Requirements';
 import CreateAccount from './components/Counselor/CreateAccount';
 import ThankYou from './components/Counselor/ThankYou';
+import Booking from "./components/Booking/Booking";
+import BookingHome from './components/Booking/BookingHome';
+import BlogDetail from './pages/blogDetail';
+
 
 function App() {
   return (
-
-    <Routes>
+    <BrowserRouter>
+     <Routes>
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} exact />
         <Route path="/blogs" element={<Blogs />} />
@@ -41,12 +46,19 @@ function App() {
         <Route path="/requirements" element={<Requirements />} />
         <Route path="/createAccount" element={<CreateAccount />} />
         <Route path="/thankYou" element={<ThankYou />} />
+        <Route path="/booking" element={<Booking />} />
+        <Route path="/booking-home" element={<BookingHome />} />
+        <Route path="blogs/:id" element={<BlogDetail />} />
+
 
 
 
         <Route component={<NotFound/>} />
       </Route>
     </Routes>
+    
+    </BrowserRouter>
+   
   );
 }
 

@@ -1,0 +1,73 @@
+.team > div {
+    background-color: #EAF8F9;
+    width: 180px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+    margin-top: 4%;
+    border-color: white;
+    border-radius: 15%;
+    max-height: 375px;
+  }
+  
+  
+  .img {
+    border-radius: 20% 20% 0 0 ;
+    width: 100%;
+    max-height: 170px;
+    object-fit: cover;
+  }
+
+  .team{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-bottom: 10%;
+    margin-top: 5%;
+   
+  }
+  .hr{
+    background-color: #6BD24D;
+    width: 180px;
+    margin-left: -13px;
+    margin-top: -1px;
+    height: 10px;
+    color: #6BD24D;
+    font-size: xx-small;
+    margin-bottom: 4%;
+  }
+  .h1{
+    margin-left: 8%;
+    margin-top: 5%;
+    
+  }
+  .h2{
+    margin-left: 8%;
+    color: 
+ #424A4F;
+    margin-top: 15%;
+  }
+
+  .h4{
+    margin-top: 15%;
+    font-size: large ;
+  }
+  .p{
+    font-size: large;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 30%;
+    margin-bottom: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    color: 
+    #424A4F;
+  }
+
+.hr1{
+  font-size: xx-small;
+}
+
