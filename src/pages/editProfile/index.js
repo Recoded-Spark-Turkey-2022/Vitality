@@ -91,17 +91,7 @@ function EditProfile() {
                   Full Name
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control
-                    type="text"
-                    placeholder=""
-                    value={userInfo.fullName}
-                    onChange={(e) => {
-                      setUserInfo({
-                        ...userInfo,
-                        fullName: e.target.value,
-                      });
-                    }}
-                  />
+            
                   <Form.Control
                     type="text"
                     placeholder=""
@@ -140,17 +130,7 @@ function EditProfile() {
                   Hobbies
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control
-                    type="text"
-                    placeholder=""
-                    value={userInfo.hobbies}
-                    onChange={(e) => {
-                      setUserInfo({
-                        ...userInfo,
-                        hobbies: e.target.value,
-                      });
-                    }}
-                  />
+          
                   <Form.Control
                     type="text"
                     placeholder=""
