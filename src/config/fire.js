@@ -36,6 +36,7 @@ async function createUser(data) {
   console.log('Document written with ID: ', docRef.id);
 }
 
+
 async function updateUser(data) {
   const examcollref = doc(db, 'users', data.id);
   updateDoc(examcollref, data);

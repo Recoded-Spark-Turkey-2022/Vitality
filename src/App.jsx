@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Route, Routes ,BrowserRouter} from 'react-router-dom';
 
 import './App.css';
@@ -25,6 +24,9 @@ import BookingHome from './components/Booking/BookingHome';
 import BlogDetail from './pages/blogDetail';
 import SelectCard from './components/SelectCard/SelectCard';
 import PurchaseThanks from './components/Purchase/PurchaseThanks';
+
+
+
 
 function App() {
   return (

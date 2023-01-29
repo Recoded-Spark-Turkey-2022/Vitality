@@ -1,5 +1,4 @@
-import React, { useState }  from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState }  from 'react'
 import Button from 'react-bootstrap/Button';
 import {createUserWithEmailAndPassword} from "firebase/auth"
 import Form from 'react-bootstrap/Form';
@@ -32,7 +31,7 @@ function SignUp() {
     })
   
     .then(() => {
-      alert('user created 👍' );
+      window.location.href='/sign-up-thanks'
     })
     .catch((error) => {
       alert(error.message);
@@ -88,7 +87,7 @@ function SignUp() {
                 <Form.Control required type="date" placeholder=""  onChange={(event) => {setRegisterbirthDate(event.target.value)}} />
               </Col></Form.Group>
             <Button  onClick={register}  variant="signup" className="btn-signup bg-info" type="submit"> 
-              <Link to="/sign-up-thanks" className="text-white text-decoration-none">Submit</Link> 
+          Submit
               </Button>
                <LoginwithSocial />
             </Form>

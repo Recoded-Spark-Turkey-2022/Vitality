@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import { Row } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import {  signInWithEmailAndPassword} from 'firebase/auth';
 import { auth } from '../../config/fire';
 import 'bootstrap/dist/css/bootstrap.css';
 import Logo from '../../assets/images/login-image.png';
@@ -14,9 +14,9 @@ import './login.css';
 import LoginwithSocial from '../SignUp/loginwithSocial';
 
 function Login() {
-  const [loginEmail, setLoginEmail] = useState('');
-  const [loginPassword, setLoginPassword] = useState('');
-  const login = async () => {
+ const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState(''); 
+   const login = async () => {
     try {
       console.log('login');
       const user = await signInWithEmailAndPassword(
@@ -27,10 +27,13 @@ function Login() {
       
       console.log(user);
       localStorage.setItem('user', JSON.stringify(user.user));
-    } catch (error) {
+      window.location.href='/'
+
+    }
+    catch (error) {
       console.log(error.message);
     }
-  };
+  }; 
 
   return (
     <div className="container">
@@ -49,9 +52,9 @@ function Login() {
                     setLoginEmail(event.target.value);
                   }}
                 />
+                
               </Form.Group>
-
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Control
                   type="password"
                   placeholder=" Your Password"
