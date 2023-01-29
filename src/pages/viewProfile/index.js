@@ -3,34 +3,46 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import { collection, getDocs } from 'firebase/firestore';
+// import { collection, getDocs } from 'firebase/firestore';
 
 import Image from 'react-bootstrap/Image';
-import { db } from '../../config/fire';
-import avatar from '../../assets/images/avatar.png';
+import {getUserByEmail} from '../../config/fire';
+// import avatar from '../../assets/images/avatar.png';
 import avatarIcon from '../../assets/Icon/avatar-icon.svg';
 
+
 function ViewProfile() {
-  const [userInfo, setUserInfo] = useState({});
+  const [userInfo, setUserInfo] = useState({}); 
 
-  async function getUserProfile() {
-    const user = localStorage.getItem('user');
-    if (user != null) {
-      const userObject = JSON.parse(user);
-      const userCol = collection(db, 'users');
-      const userSnapshot = await getDocs(userCol);
-      const userData = userSnapshot.docs
-        .map((doc) => doc.data())
-        .find((userD) => userD.email === userObject.email);
+  // async function getUserProfile() {
+  //   const user = localStorage.getItem('user');
+  //   if (user != null) {
+  //     const userObject = JSON.parse(user);
+  //     const userCol = collection(db, 'users');
+  //     const userSnapshot = await getDocs(userCol);
+  //     const userData = userSnapshot.docs
+  //       .map((doc) => doc.data())
+  //       .find((userD) => userD.email === userObject.email);
 
-      setUserInfo(userData);
+  //     setUserInfo(userData);
+  //   }
+  // }
+
+  async function getUserByEmails() {
+    const data = await getUserByEmail();
+    if (data !== undefined) {
+      setUserInfo(data);
     }
+    console.error(data);
   }
+  useEffect(() => {
+    getUserByEmails();
+    return () => {};
+  }, []);
 
-  const space = ' ';
 
   useEffect(() => {
-    getUserProfile();
+    getUserByEmails();
     return () => {};
   }, []);
 
@@ -41,7 +53,7 @@ function ViewProfile() {
           sm={12}
           className="d-flex flex-column align-items-center justify-content-start"
         >
-          <Image className="fluid rounded-circle " src={avatar} alt="avatar" />
+          <Image className="fluid rounded-circle " src={userInfo.pictureUrl} alt="avatar" />
           <Image src={avatarIcon} className="avatar-icon " />
         </Col>
       </Row>
@@ -62,7 +74,7 @@ function ViewProfile() {
                   <Form.Control
                     type="text"
                     placeholder=""
-                    value={userInfo.name + space + userInfo.surname}
+                    value={userInfo.fullName}
                   />
                 </Col>
               </Form.Group>
@@ -72,7 +84,7 @@ function ViewProfile() {
                   Bio
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control as="textarea" value={userInfo.bio} />
+                  <Form.Control as="textarea" value={userInfo.hobbies} />
                 </Col>
               </Form.Group>
 
@@ -81,7 +93,8 @@ function ViewProfile() {
                   Birth Date
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control type="date" placeholder="" />
+                  <Form.Control type="date" placeholder=""
+                   value={userInfo.birthDate} />
                 </Col>
               </Form.Group>
               <Form.Group as={Row} className="mb-3" controlId="email">
@@ -97,7 +110,8 @@ function ViewProfile() {
                   Phone Number
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control type="number" placeholder="" />
+                  <Form.Control type="number" placeholder=""
+                   value={userInfo.phoneNumber} />
                 </Col>
               </Form.Group>
             </Form>

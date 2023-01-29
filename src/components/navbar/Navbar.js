@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
-import { onAuthStateChanged } from 'firebase/auth';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
 import './navbar.css';
 import logo from '../../assets/images/logo.png';
 import { auth } from '../../config/fire';
 
 function Navbar() {
-  const [currentUserMail, setCurrentUserMail] = useState('');
+  const logout = async () => {
+    await signOut(auth);
+    console.log('log out');
+    window.location.reload();
+  };
+  const [currentUserstate, setcurrentUserstate] = useState('');
   onAuthStateChanged(auth, (currentUser) => {
     if (currentUser) {
-      setCurrentUserMail(currentUser.email);
+      setcurrentUserstate(true);
     }
   });
 
@@ -72,31 +77,42 @@ function Navbar() {
               </li>
             </ul>
             <ul className="nav navbar-nav ms-4">
-              <li className="nav-item dropdown">
-                <Link
-                  to="/login"
-                  className="nav-link dropdown-toggle btn-login d-flex align-items-center justify-content-center"
-                  data-bs-toggle="dropdown"
-                >
-                  Log In
-                </Link>
-                <div className="dropdown-menu dropdown-menu-end">
-                  <Link to="/login" className="dropdown-item">
+              {currentUserstate === true && (
+                <div>
+                  <li className="nav-item dropdown">
+                    <Link
+                      to="/login"
+                      className="nav-link dropdown-toggle btn-login d-flex align-items-center justify-content-center"
+                      data-bs-toggle="dropdown"
+                      id="navbar-login"
+                    >
+                      {currentUserstate ? 'My Profile' : 'Login'}
+                    </Link>
+                    <div className="dropdown-menu dropdown-menu-end">
+                      <Link to="/view-profile" className="dropdown-item">
+                        View Profile
+                      </Link>
+                      <Link to="/edit-profile" className="dropdown-item">
+                        Edit Profile
+                      </Link>
+                      <div className="dropdown-divider">i</div>
+                      <Link to="/" className="dropdown-item" onClick={logout}>
+                        Logout
+                      </Link>
+                    </div>
+                  </li>
+                </div>
+              )}
+              {currentUserstate !== true && (
+                <li className="nav-item">
+                  <Link
+                    to="/login"
+                    className="nav-link  btn-login d-flex align-items-center justify-content-center"
+                  >
                     Log In
                   </Link>
-                  <Link to="/view-profile" className="dropdown-item">
-                    View Profile
-                  </Link>
-                  <Link to="/edit-profile" className="dropdown-item">
-                    Edit Profile
-                  </Link>
-                  <div className="dropdown-divider">i</div>
-                  <Link to="/" className="dropdown-item">
-                    Logout
-                  </Link>
-                </div>
-              </li>{' '}
-              <p>{currentUserMail}</p>
+                </li>
+              )}
             </ul>
           </div>
         </div>

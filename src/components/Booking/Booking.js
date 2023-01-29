@@ -24,7 +24,7 @@ const Booking = () => {
   import Header7 from './Header/Header7'
   import Header8 from './Header/Header8'
   
-  function Book() {
+  function Booking() {
   
     const [cardNumber, setCardNumber] = useState(1)
     const [shownCard, setShownCard] = useState(<Card1 />)
@@ -76,4 +76,4 @@ const Booking = () => {
     )
   }
   
-  export default Book
+  export default Booking

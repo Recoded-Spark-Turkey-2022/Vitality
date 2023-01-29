@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useEffect, useState } from 'react';
 import './editProfile.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -7,12 +7,71 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import { Link } from 'react-router-dom';
-import avatar from '../../assets/images/avatar.png';
+// import { collection, getDocs } from 'firebase/firestore';
+// import avatar from '../../assets/images/avatar.png';
+// import { collection, getDocs } from 'firebase/firestore';
+// import avatar from '../../assets/images/avatar.png';
 import avatarIcon from '../../assets/Icon/avatar-icon.svg';
+import { updateUser, getUserByEmail, deleteUser } from '../../config/fire';
 
 function EditProfile() {
+  const [userInfo, setUserInfo] = useState({});
+  // const [loading, setLoading] = useState(false);
+  // async function getUserProfile() {
+  //   const user = localStorage.getItem('user');
+  //   if (user != null) {
+  //     const userObject = JSON.parse(user);
+  //     const userCol = collection(db, 'users');
+  //     const userSnapshot = await getDocs(userCol);
+
+  //     const userData = userSnapshot.docs
+  //       .map((doc) => doc.data())
+  //       .find((userD) => userD.email === userObject.email);
+  //     // setLoading(false);
+  //     setUserInfo(userData);
+  //   }
+  // }
+  // function submit() {
+  //   updateUser(userInfo);
+  // }
+
+  // useEffect(() => {
+  //   getUserProfile();
+
+  //   return () => {};
+  // }, []);
+
+  const handleCancel = () => {
+    setUserInfo({
+      fullName: '',
+      pictureUrl: '',
+      hobbies: '',
+      phoneNumber: '',
+      password: '',
+      email: '',
+      familySize: '',
+      birthDate: '',
+    });
+  };
+  async function getUserByEmails() {
+    const data = await getUserByEmail();
+    if (data !== undefined) {
+      setUserInfo(data);
+    }
+    // console.error(data);
+  }
+  useEffect(() => {
+    getUserByEmails();
+    return () => {};
+  }, []);
+  function submit() {
+    updateUser(userInfo);
+  }
+
   return (
     <>
+      {}
+      {}
       <p className="text-center w-100 edit-p p-3">
         Please fill all the fields with correct and valid details to complete
         your profile.
@@ -25,7 +84,7 @@ function EditProfile() {
           >
             <Image
               className="fluid rounded-circle "
-              src={avatar}
+              src={userInfo.pictureUrl}
               alt="avatar"
             />
             <Image src={avatarIcon} className="avatar-icon " />
@@ -44,7 +103,17 @@ function EditProfile() {
                   Full Name
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control type="email" placeholder="" />
+                  <Form.Control
+                    type="text"
+                    placeholder=""
+                    value={userInfo.fullName}
+                    onChange={(e) => {
+                      setUserInfo({
+                        ...userInfo,
+                        fullName: e.target.value,
+                      });
+                    }}
+                  />
                 </Col>
               </Form.Group>
 
@@ -55,9 +124,14 @@ function EditProfile() {
                 <Col sm={6}>
                   <Form.Select aria-label="Default select example">
                     <option>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option value="1">Associate Degree </option>
+                    <option value="2">Bachelor Degree</option>
+                    <option value="3">Master Degree</option>
+                    <option value="3">Doctoral Degree</option>
+                    <option value="1">Associate Degree </option>
+                    <option value="2">Bachelor Degree</option>
+                    <option value="3">Master Degree</option>
+                    <option value="3">Doctoral Degree</option>
                   </Form.Select>
                 </Col>
               </Form.Group>
@@ -67,7 +141,17 @@ function EditProfile() {
                   Hobbies
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control type="email" placeholder="" />
+                  <Form.Control
+                    type="text"
+                    placeholder=""
+                    value={userInfo.hobbies}
+                    onChange={(e) => {
+                      setUserInfo({
+                        ...userInfo,
+                        hobbies: e.target.value,
+                      });
+                    }}
+                  />
                 </Col>
               </Form.Group>
               <Form.Group as={Row} className="mb-3" controlId="familySize">
@@ -75,7 +159,17 @@ function EditProfile() {
                   Family Size
                 </Form.Label>
                 <Col sm={1}>
-                  <Form.Control type="email" placeholder="" />
+                  <Form.Control
+                    type="text"
+                    placeholder=""
+                    value={userInfo.familySize}
+                    onChange={(e) => {
+                      setUserInfo({
+                        ...userInfo,
+                        familySize: e.target.value,
+                      });
+                    }}
+                  />
                 </Col>
                 <Form.Label column sm={2}>
                   Member(s)
@@ -89,9 +183,10 @@ function EditProfile() {
                 <Col sm={6}>
                   <Form.Select aria-label="Default select example">
                     <option>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option value="1">Female</option>
+                    <option value="2">Male</option>
+                    <option value="1">Female</option>
+                    <option value="2">Male</option>
                   </Form.Select>
                 </Col>
               </Form.Group>
@@ -100,7 +195,17 @@ function EditProfile() {
                   Birth Date
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control type="date" placeholder="" />
+                  <Form.Control
+                    type="date"
+                    placeholder=""
+                    value={userInfo.birthDate}
+                    onChange={(e) => {
+                      setUserInfo({
+                        ...userInfo,
+                        birthDate: e.target.value,
+                      });
+                    }}
+                  />
                 </Col>
               </Form.Group>
               <Form.Group as={Row} className="mb-3" controlId="email">
@@ -108,7 +213,17 @@ function EditProfile() {
                   Email
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control type="email" placeholder="" />
+                  <Form.Control
+                    type="email"
+                    placeholder=""
+                    value={userInfo.email}
+                    onChange={(e) => {
+                      setUserInfo({
+                        ...userInfo,
+                        email: e.target.value,
+                      });
+                    }}
+                  />
                 </Col>
               </Form.Group>
               <Form.Group as={Row} className="mb-3" controlId="phoneNumber">
@@ -116,15 +231,35 @@ function EditProfile() {
                   Phone Number
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control type="number" placeholder="" />
+                  <Form.Control
+                    type="number"
+                    placeholder=""
+                    value={userInfo.phoneNumber}
+                    onChange={(e) => {
+                      setUserInfo({
+                        ...userInfo,
+                        phoneNumber: e.target.value,
+                      });
+                    }}
+                  />
                 </Col>
               </Form.Group>
               <Form.Group as={Row} className="mb-3" controlId="uploadId">
                 <Form.Label column sm={6}>
-                  Upload ID
+                  Picture Url
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control type="file" placeholder="" />
+                  <Form.Control
+                    type="text"
+                    placeholder=""
+                    value={userInfo.pictureUrl}
+                    onChange={(e) => {
+                      setUserInfo({
+                        ...userInfo,
+                        pictureUrl: e.target.value,
+                      });
+                    }}
+                  />
                 </Col>
               </Form.Group>
 
@@ -138,7 +273,17 @@ function EditProfile() {
                   Password
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control type="password" placeholder="" />
+                  <Form.Control
+                    type="password"
+                    placeholder=""
+                    value={userInfo.password}
+                    onChange={(e) => {
+                      setUserInfo({
+                        ...userInfo,
+                        password: e.target.value,
+                      });
+                    }}
+                  />
                 </Col>
               </Form.Group>
               <Form.Group as={Row} className="mb-3" controlId="confirmPassword">
@@ -153,16 +298,30 @@ function EditProfile() {
               <Row>
                 <Col className="d-flex justify-content-between">
                   <Link to="/edit-thanks">
-                    <Button type="submit" className="btn-bg btn-text ">
+                    <Button
+                      type="submit"
+                      className="btn-bg btn-text "
+                      onClick={() => {
+                        submit();
+                      }}
+                    >
                       SAVE CHANGES
                     </Button>
                   </Link>
 
-                  <Button className="btn-bg btn-text" type="submit">
-                    DELETE ACCOUNT
+                  <Button
+                    type="button"
+                    onClick={() => {
+                      deleteUser(userInfo.id);
+                    }}
+                  >
+                    delete
                   </Button>
-
-                  <Button className="btn-bg btn-text" type="submit">
+                  <Button
+                    className="btn-bg btn-text"
+                    type="button"
+                    onClick={handleCancel}
+                  >
                     CANCEL
                   </Button>
                 </Col>
