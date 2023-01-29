@@ -12,6 +12,7 @@ const BookingHome = () => {
     width: '100vw',
     backgroundSize: 'cover',
     backgroundPosition: 'top',
+    marginTop: -45,
     top: 0, }}>
       
       <div className="flex flex-col pt-16  items-center md:flex-col   lg:flex-row    lg:justify-evenly lg:items-center md:items-center lg:pt-52  md:pt-28">
