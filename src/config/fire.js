@@ -38,6 +38,7 @@ async function createUser(data) {
 }
 
 
+
 async function updateUser(data) {
   const examcollref = doc(db, 'users', data.id);
   updateDoc(examcollref, data);
