@@ -1,5 +1,4 @@
 import { React, useEffect, useState } from 'react';
-import { React, useEffect, useState } from 'react';
 import './editProfile.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -47,7 +46,7 @@ function EditProfile() {
     if (data !== undefined) {
       setUserInfo(data);
     }
-    console.error(data);
+    // console.error(data);
   }
   useEffect(() => {
     getUserByEmails();

@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom';
 import { createSubscribe } from '../../config/fire';
 
 
-import React ,{useState}from 'react';
-import { Link } from 'react-router-dom';
 
-import { createSubscribe } from '../../config/fire';
+
 
 
 import './footer.css';

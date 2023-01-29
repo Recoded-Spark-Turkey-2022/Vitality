@@ -8,7 +8,7 @@ import MainLayout from './components/layouts/MainLayout';
 import About from './pages/about';
 import Blogs from './pages/blogs';
 import Contact from './pages/contact/Contact';
-import EditProfile from './pages/editProfile';
+import EditProfile from './pages/editProfile'
 import Home from './pages/home';
 import Login from './pages/login';
 import NotFound from './pages/notFound';
