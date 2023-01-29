@@ -1,11 +1,36 @@
-import React from "react";
+import React, {useState} from "react";
 import './Contact.css'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { doc, setDoc } from "firebase/firestore"; 
+import {db} from "../../config/fire";
 import Group from "./Group-147.jpg"
 
 
 function Contact (){
+    const [contactType, setContactType] = useState("") 
+    const [name,setName] = useState("")
+    const [email,setEmail] = useState("")
+    const [details, setDetails] = useState("")
+
+    const handleContactChange = e => {setContactType(e.target.value)}
+    const handleNameChange = e => {setName(e.target.value)}
+    const handleEmailChange = e => {setEmail(e.target.value)}
+    const handleDetailsChange = e => {setDetails(e.target.value)}
+    
+   
+      
+        async function sendData(contactTypeValue1, nameValue1, emailValue1, detailsValue1){
+          
+          await setDoc(doc(db, "contactUs-list", emailValue1), {
+            contactType: contactTypeValue1,
+            name: nameValue1,
+            email: emailValue1,
+            details: detailsValue1
+          })
+          .then(handleContactChange, handleNameChange, handleEmailChange, handleDetailsChange, (""))
+        }
+
     return(
         
         <div>
@@ -16,13 +41,13 @@ function Contact (){
             <div className=" flex flex-row flex-wrap mb-20">
                 <div className=" radio">
                     <h1 className=" my-14 mb-8 text-lg">Type of contact</h1>
-                    <input type="radio" name="type_of_contact" value="service" className=" mb-6"/> I have a question about the service.<br />
-                    <input type="radio" name="type_of_contact" value="registered_client" className=" mb-6"/>  I&apos;m a registered client and I need support.<br />
-                    <input type="radio" name="type_of_contact" value="joining" className=" mb-6"/> I&apos;m a counselor interested in joining.<br />
-                    <input type="radio" name="type_of_contact" value="registered_counselor" className=" mb-6" /> I&apos;m a registered counselor and I need support.<br />
-                    <input type="radio" name="type_of_contact" value="business-related_inquiry" className=" mb-6"/> I have a business-related inquiry.<br />
-                    <input type="radio" name="type_of_contact" value="organization" className=" mb-6"/> I&apos;m interested in Healing Online for my organization.<br />
-                    <input type="radio" name="type_of_contact" value="billing" className=" mb-6"/> I have a billing related question.<br />
+                    <input type="radio" name="type_of_contact" value="service" onChange={handleContactChange} className=" mb-6"/> I have a question about the service.<br />
+                    <input type="radio" name="type_of_contact" value="registered_client" onChange={handleContactChange} className=" mb-6"/>  I&apos;m a registered client and I need support.<br />
+                    <input type="radio" name="type_of_contact" value="joining" onChange={handleContactChange} className=" mb-6"/> I&apos;m a counselor interested in joining.<br />
+                    <input type="radio" name="type_of_contact" value="registered_counselor" onChange={handleContactChange} className=" mb-6" /> I&apos;m a registered counselor and I need support.<br />
+                    <input type="radio" name="type_of_contact" value="business-related_inquiry" onChange={handleContactChange} className=" mb-6"/> I have a business-related inquiry.<br />
+                    <input type="radio" name="type_of_contact" value="organization" onChange={handleContactChange} className=" mb-6"/> I&apos;m interested in Healing Online for my organization.<br />
+                    <input type="radio" name="type_of_contact" value="billing" onChange={handleContactChange} className=" mb-6"/> I have a billing related question.<br />
                 </div>
                 <div>
                     <img src={Group} alt='Healling' className=" photo"/>
@@ -31,13 +56,13 @@ function Contact (){
             <div className=" contener">
                 <div className=" first  ">
                      <h5 className=" -mb-2">Full Name:  </h5><br/> 
-                     <input type="Name" id="Name" name="Name"  placeholder="Enter your full name here..." className="box"/> <br/>
+                     <input type="Name" id="Name" name="Name" onChange={handleNameChange} placeholder="Enter your full name here..." className="box"/> <br/>
                      <h5 className=" -mb-2 -mt-2">Email:   </h5><br/>
-                     <input type="Email" id="Email" name="Email"  placeholder="Enter your email address here..." className="box"/> <br/>
+                     <input type="Email" id="Email" name="Email" onChange={handleEmailChange} placeholder="Enter your email address here..." className="box"/> <br/>
                      <h5 className=" -mb-2 -mt-2">Details:  </h5><br/>
-                     <textarea id="Details" name="Details" placeholder="Enter your details here..." className="box"/> <br/>
+                     <textarea id="Details" name="Details" onChange={handleDetailsChange} placeholder="Enter your details here..." className="box"/> <br/>
                     <Link to='/thankYou'>
-                     <Button type="submit" className="btn btn btn-info bg-[#2DD3E3] -mt-8 w-56">Submit</Button>
+                     <Button type="submit" onClick={() => { sendData(contactType, name, email, details); }} className="btn btn btn-info bg-[#2DD3E3] -mt-8 w-56">Submit</Button>
                      </Link>
                 </div>
                 <div className=" second ">
