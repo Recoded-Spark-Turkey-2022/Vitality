@@ -7,10 +7,10 @@ import Col from 'react-bootstrap/Col';
 
 const EnrollHome = () => {
   return (
-    <Container className="shadow-sm p-3 mb-5 bg-white rounded">
+    <Container className="mt-20 shadow-sm p-3 mb-5 bg-white rounded">
       <Row className="justify-content-md-center">
         <Col sm={6}>
-          <h1>ARE YOU A CONSELOR?</h1>
+          <h1>ARE YOU A COUNSELOR?</h1>
         </Col>
       </Row>
       <Row>

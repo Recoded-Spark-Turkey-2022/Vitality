@@ -3,14 +3,18 @@ import EnrollHome from "../../components/Counselor/EnrollHome"
 import BookingHome from '../../components/Booking/BookingHome'
 import SimpleSlider from '../../components/slider/Slider';
 import ContactCard from '../../components/ContactCard/ContactCard'
+import PurchaseHome from '../../components/Purchase/PurchaseHome'
+import TherapistHome from '../../components/TherapistHome/TherapistHome'
 
 function Home() {
   return (
     <>
       <BookingHome />
-      <EnrollHome/>
+      <TherapistHome />
       <ContactCard />
       <SimpleSlider />
+      <PurchaseHome />
+      <EnrollHome/>
     </>
   );
 }

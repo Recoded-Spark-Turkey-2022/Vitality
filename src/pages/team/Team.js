@@ -1,5 +1,4 @@
 import React from "react";
-import Allan from './Team_imges/Allan.jpg';
 import trteel from './Team_imges/Trteel.jpg'
 import './Team.css'
 
@@ -10,14 +9,7 @@ function Team() {
            <h2 className="h2">Meet the Team!</h2>
            <div className ="team ">
   
-      <div className="">
-          <img src={Allan} alt="Avatar" className="img" />
-             <div className="container">
-              <div className="hr"><h1 className="hr1">t</h1></div>
-                 <h4 className="h4"><b>Allan Saleh</b></h4>
-                  <p className="p">Lead Engineer & Web Developer</p>
-              </div>
-      </div>
+     
       <div className="">
           <img src='https://media.discordapp.net/attachments/1053628144315277362/1067746220556156938/Cagla_Bircan_Turkey_2022.jpeg?width=663&height=663' alt="Avatar" className="img" />
              <div className="container">

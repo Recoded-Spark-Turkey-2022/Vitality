@@ -7,7 +7,7 @@ import './ContactCard.css'
 function ContactCard (){
     return(
     <div> 
-        <h1 className="header1">we can communicate through</h1>
+        <h1 className="header1">WE CAN COMMUNICATE THROUGH</h1>
         <div className="card_cont">
              <div className="card">
           <img src={Call} alt="Avatar" className="img1" />

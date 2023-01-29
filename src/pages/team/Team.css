@@ -23,6 +23,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     margin-left: 8%;
     margin-right: 8%;
     margin-bottom: 10%;
@@ -40,12 +41,12 @@
     margin-bottom: 4%;
   }
   .h1{
-    margin-left: 8%;
+    margin-left: 15%;
     margin-top: 5%;
     
   }
   .h2{
-    margin-left: 8%;
+    margin-left: 15%;
     color: 
  #424A4F;
     margin-top: 15%;
