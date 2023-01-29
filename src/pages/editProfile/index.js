@@ -9,8 +9,10 @@ import Image from 'react-bootstrap/Image';
 import { Link } from 'react-router-dom';
 // import { collection, getDocs } from 'firebase/firestore';
 // import avatar from '../../assets/images/avatar.png';
+// import { collection, getDocs } from 'firebase/firestore';
+// import avatar from '../../assets/images/avatar.png';
 import avatarIcon from '../../assets/Icon/avatar-icon.svg';
-import {updateUser,getUserByEmail,deleteUser} from '../../config/fire';
+import { updateUser, getUserByEmail, deleteUser } from '../../config/fire';
 
 function EditProfile() {
   const [userInfo, setUserInfo] = useState({});
@@ -38,13 +40,25 @@ function EditProfile() {
 
   //   return () => {};
   // }, []);
- 
+
+  const handleCancel = () => {
+    setUserInfo({
+      fullName: '',
+      pictureUrl: '',
+      hobbies: '',
+      phoneNumber: '',
+      password: '',
+      email: '',
+      familySize: '',
+      birthDate: '',
+    });
+  };
   async function getUserByEmails() {
-    const data = await getUserByEmail("admin@outlook.com");
+    const data = await getUserByEmail();
     if (data !== undefined) {
       setUserInfo(data);
     }
-    console.error(data);
+    // console.error(data);
   }
   useEffect(() => {
     getUserByEmails();
@@ -56,6 +70,7 @@ function EditProfile() {
 
   return (
     <>
+      {}
       {}
       <p className="text-center w-100 edit-p p-3">
         Please fill all the fields with correct and valid details to complete
@@ -69,8 +84,7 @@ function EditProfile() {
           >
             <Image
               className="fluid rounded-circle "
-               src={userInfo.pictureUrl}
-            
+              src={userInfo.pictureUrl}
               alt="avatar"
             />
             <Image src={avatarIcon} className="avatar-icon " />
@@ -114,6 +128,10 @@ function EditProfile() {
                     <option value="2">Bachelor Degree</option>
                     <option value="3">Master Degree</option>
                     <option value="3">Doctoral Degree</option>
+                    <option value="1">Associate Degree </option>
+                    <option value="2">Bachelor Degree</option>
+                    <option value="3">Master Degree</option>
+                    <option value="3">Doctoral Degree</option>
                   </Form.Select>
                 </Col>
               </Form.Group>
@@ -141,15 +159,17 @@ function EditProfile() {
                   Family Size
                 </Form.Label>
                 <Col sm={1}>
-                  <Form.Control type="text" placeholder=""
-                      value={userInfo.familySize}
-                      onChange={(e) => {
-                        setUserInfo({
-                          ...userInfo,
-                          familySize: e.target.value,
-                        });
-                      }}
-                       />
+                  <Form.Control
+                    type="text"
+                    placeholder=""
+                    value={userInfo.familySize}
+                    onChange={(e) => {
+                      setUserInfo({
+                        ...userInfo,
+                        familySize: e.target.value,
+                      });
+                    }}
+                  />
                 </Col>
                 <Form.Label column sm={2}>
                   Member(s)
@@ -165,6 +185,8 @@ function EditProfile() {
                     <option>Open this select menu</option>
                     <option value="1">Female</option>
                     <option value="2">Male</option>
+                    <option value="1">Female</option>
+                    <option value="2">Male</option>
                   </Form.Select>
                 </Col>
               </Form.Group>
@@ -173,14 +195,17 @@ function EditProfile() {
                   Birth Date
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control type="date" placeholder="" 
-                      value={userInfo.birthDate}
-                      onChange={(e) => {
-                        setUserInfo({
-                          ...userInfo,
-                          birthDate: e.target.value,
-                        });
-                      }}/>
+                  <Form.Control
+                    type="date"
+                    placeholder=""
+                    value={userInfo.birthDate}
+                    onChange={(e) => {
+                      setUserInfo({
+                        ...userInfo,
+                        birthDate: e.target.value,
+                      });
+                    }}
+                  />
                 </Col>
               </Form.Group>
               <Form.Group as={Row} className="mb-3" controlId="email">
@@ -188,14 +213,17 @@ function EditProfile() {
                   Email
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control type="email" placeholder=""
-                      value={userInfo.email}
-                      onChange={(e) => {
-                        setUserInfo({
-                          ...userInfo,
-                          email: e.target.value,
-                        });
-                      }} />
+                  <Form.Control
+                    type="email"
+                    placeholder=""
+                    value={userInfo.email}
+                    onChange={(e) => {
+                      setUserInfo({
+                        ...userInfo,
+                        email: e.target.value,
+                      });
+                    }}
+                  />
                 </Col>
               </Form.Group>
               <Form.Group as={Row} className="mb-3" controlId="phoneNumber">
@@ -203,29 +231,35 @@ function EditProfile() {
                   Phone Number
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control type="number" placeholder="" 
-                      value={userInfo.phoneNumber}
-                      onChange={(e) => {
-                        setUserInfo({
-                          ...userInfo,
-                          phoneNumber: e.target.value,
-                        });
-                      }}/>
+                  <Form.Control
+                    type="number"
+                    placeholder=""
+                    value={userInfo.phoneNumber}
+                    onChange={(e) => {
+                      setUserInfo({
+                        ...userInfo,
+                        phoneNumber: e.target.value,
+                      });
+                    }}
+                  />
                 </Col>
               </Form.Group>
               <Form.Group as={Row} className="mb-3" controlId="uploadId">
                 <Form.Label column sm={6}>
-                Picture Url
+                  Picture Url
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control type="text" placeholder="" 
-                      value={userInfo.pictureUrl}
-                      onChange={(e) => {
-                        setUserInfo({
-                          ...userInfo,
-                          pictureUrl: e.target.value,
-                        });
-                      }}/>
+                  <Form.Control
+                    type="text"
+                    placeholder=""
+                    value={userInfo.pictureUrl}
+                    onChange={(e) => {
+                      setUserInfo({
+                        ...userInfo,
+                        pictureUrl: e.target.value,
+                      });
+                    }}
+                  />
                 </Col>
               </Form.Group>
 
@@ -239,14 +273,17 @@ function EditProfile() {
                   Password
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control type="password" placeholder=""
-                      value={userInfo.password}
-                      onChange={(e) => {
-                        setUserInfo({
-                          ...userInfo,
-                          password: e.target.value,
-                        });
-                      }} />
+                  <Form.Control
+                    type="password"
+                    placeholder=""
+                    value={userInfo.password}
+                    onChange={(e) => {
+                      setUserInfo({
+                        ...userInfo,
+                        password: e.target.value,
+                      });
+                    }}
+                  />
                 </Col>
               </Form.Group>
               <Form.Group as={Row} className="mb-3" controlId="confirmPassword">
@@ -254,30 +291,37 @@ function EditProfile() {
                   Confirm Password
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control type="password" placeholder=""
-                       />
+                  <Form.Control type="password" placeholder="" />
                 </Col>
               </Form.Group>
 
               <Row>
                 <Col className="d-flex justify-content-between">
                   <Link to="/edit-thanks">
-                    <Button type="submit" className="btn-bg btn-text " 
+                    <Button
+                      type="submit"
+                      className="btn-bg btn-text "
                       onClick={() => {
                         submit();
-                      }}>
+                      }}
+                    >
                       SAVE CHANGES
                     </Button>
                   </Link>
 
-                  <Button type="button"
-        onClick={() => {
-          deleteUser(userInfo.id);
-        }}
-      >
-        delete
-      </Button>
-                  <Button className="btn-bg btn-text" type="submit">
+                  <Button
+                    type="button"
+                    onClick={() => {
+                      deleteUser(userInfo.id);
+                    }}
+                  >
+                    delete
+                  </Button>
+                  <Button
+                    className="btn-bg btn-text"
+                    type="button"
+                    onClick={handleCancel}
+                  >
                     CANCEL
                   </Button>
                 </Col>
