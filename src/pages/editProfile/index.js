@@ -16,6 +16,7 @@ import { updateUser, getUserByEmail, deleteUser } from '../../config/fire';
 
 function EditProfile() {
   const [userInfo, setUserInfo] = useState({});
+
   // const [loading, setLoading] = useState(false);
   // async function getUserProfile() {
   //   const user = localStorage.getItem('user');
@@ -122,16 +123,19 @@ function EditProfile() {
                   Education Level
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Select aria-label="Default select example">
-                    <option>Open this select menu</option>
-                    <option value="1">Associate Degree </option>
-                    <option value="2">Bachelor Degree</option>
-                    <option value="3">Master Degree</option>
-                    <option value="3">Doctoral Degree</option>
-                    <option value="1">Associate Degree </option>
-                    <option value="2">Bachelor Degree</option>
-                    <option value="3">Master Degree</option>
-                    <option value="3">Doctoral Degree</option>
+                  <Form.Select
+                    aria-label="Default select example"
+                    onChange={(e) => {
+                      setUserInfo({
+                        ...userInfo,
+                        edLevel: e.target.value,
+                      });
+                    }}
+                  > <option >{userInfo.edLevel} </option>
+                    <option value="Associate Degree">Associate Degree </option>
+                    <option value="Bachelor Degree">Bachelor Degree</option>
+                    <option value="Master Degree">Master Degree</option>
+                    <option value="Doctoral Degree">Doctoral Degree</option>
                   </Form.Select>
                 </Col>
               </Form.Group>
@@ -181,12 +185,16 @@ function EditProfile() {
                   Gender
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Select aria-label="Default select example">
-                    <option>Open this select menu</option>
-                    <option value="1">Female</option>
-                    <option value="2">Male</option>
-                    <option value="1">Female</option>
-                    <option value="2">Male</option>
+                  <Form.Select aria-label="Default select example"  onChange={(e) => {
+                      setUserInfo({
+                        ...userInfo,
+                        gender: e.target.value,
+                      });
+                    }}>
+                    <option> {userInfo.gender} </option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                   
                   </Form.Select>
                 </Col>
               </Form.Group>
