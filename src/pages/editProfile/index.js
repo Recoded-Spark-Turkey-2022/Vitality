@@ -41,6 +41,18 @@ function EditProfile() {
   //   return () => {};
   // }, []);
 
+  const handleCancel = () => {
+    setUserInfo({
+      fullName: '',
+      pictureUrl: '',
+      hobbies: '',
+      phoneNumber: '',
+      password: '',
+      email: '',
+      familySize: '',
+      birthDate: '',
+    });
+  };
   async function getUserByEmails() {
     const data = await getUserByEmail();
     if (data !== undefined) {
@@ -91,7 +103,6 @@ function EditProfile() {
                   Full Name
                 </Form.Label>
                 <Col sm={6}>
-            
                   <Form.Control
                     type="text"
                     placeholder=""
@@ -130,7 +141,6 @@ function EditProfile() {
                   Hobbies
                 </Form.Label>
                 <Col sm={6}>
-          
                   <Form.Control
                     type="text"
                     placeholder=""
@@ -281,8 +291,7 @@ function EditProfile() {
                   Confirm Password
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control type="password" placeholder=""
-                       />
+                  <Form.Control type="password" placeholder="" />
                 </Col>
               </Form.Group>
 
@@ -308,7 +317,11 @@ function EditProfile() {
                   >
                     delete
                   </Button>
-                  <Button className="btn-bg btn-text" type="submit">
+                  <Button
+                    className="btn-bg btn-text"
+                    type="button"
+                    onClick={handleCancel}
+                  >
                     CANCEL
                   </Button>
                 </Col>
