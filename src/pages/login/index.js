@@ -63,7 +63,7 @@ function Login() {
               <Col className="d-flex justify-content-between">
 
                 <Button
-                  type="submit"
+                  type="button"
                   className="btn-login col " 
                   onClick={() => login()}>
                   Login
