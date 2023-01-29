@@ -1,5 +1,7 @@
 # Capstone Project
 
+Our project link is https://vitality-online-therapist.netlify.app/
+
 You'll be building this project with your peers. You'll be able to read more about the project you will build on your Canvas.
 
 ## Issues and Pull Requests
