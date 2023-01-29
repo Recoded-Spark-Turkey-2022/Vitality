@@ -49,7 +49,7 @@ async function getUserByEmail() {
       const userCol = collection(db, 'users');
       const userSnapshot = await getDocs(userCol);
       const userData = userSnapshot.docs
-        .map((x) => x.data())
+        .map((x) => ({ ...x.data(), id: x.id }) )
         .find((userD) => userD.email === userObject.email);
   // const snapshot = await getDocs(collection(db, 'users'));
   // const docs = snapshot.docs.map((dd) => ({ ...dd.data(), id: dd.id }));
@@ -60,8 +60,9 @@ async function getUserByEmail() {
 }
 
 async function deleteUser(id) {
+  console.log(id)
   const path = "users/"
-  await deleteDoc(doc(db, +path + id));
+  await deleteDoc(doc(db, path + id));
 }
 
 async function createSubscribe(data) {

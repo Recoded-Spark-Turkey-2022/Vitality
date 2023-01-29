@@ -40,7 +40,7 @@ function EditProfile() {
   // }, []);
 
   async function getUserByEmails() {
-    const data = await getUserByEmail('admin@outlook.com');
+    const data = await getUserByEmail();
     if (data !== undefined) {
       setUserInfo(data);
     }

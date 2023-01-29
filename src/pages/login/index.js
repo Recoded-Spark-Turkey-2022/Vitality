@@ -26,6 +26,7 @@ function Login() {
         loginEmail,
         loginPassword
       );
+      
       console.log(user);
       localStorage.setItem('user', JSON.stringify(user.user));
     } catch (error) {

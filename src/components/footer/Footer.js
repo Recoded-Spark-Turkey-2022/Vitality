@@ -9,9 +9,11 @@ import './footer.css';
 function Footer() {
   const [registerForm, setregisterForm] = useState({});
   function submit() {
-    
+  
     createSubscribe(registerForm);
-  }
+    setregisterForm({email:""})
+   
+  }  
 
   return (
     <div className=" footer " >
@@ -30,6 +32,7 @@ function Footer() {
                 onChange={(e) => {
                   setregisterForm({  email: e.target.value });
                 }}
+                value={registerForm.email}
               />
               <Link to="/edit-thanks">
               <button
