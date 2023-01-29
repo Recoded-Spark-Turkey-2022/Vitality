@@ -1,24 +1,20 @@
-import React, { useState  } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
-import {  onAuthStateChanged } from 'firebase/auth';
+import { onAuthStateChanged } from 'firebase/auth';
 import './navbar.css';
 import logo from '../../assets/images/logo.png';
-import { auth  } from '../../config/fire';
-
+import { auth } from '../../config/fire';
 
 function Navbar() {
   const [currentUserMail, setCurrentUserMail] = useState('');
   onAuthStateChanged(auth, (currentUser) => {
-    if(currentUser) {
-      setCurrentUserMail(currentUser.email)
-         }
-  }); 
-  
+    if (currentUser) {
+      setCurrentUserMail(currentUser.email);
+    }
+  });
+
   return (
-
-
-    
     <div className="bg-navbar fixed-top margin-bottom">
       <nav
         className="navbar navbar-expand-sm  
@@ -76,7 +72,6 @@ function Navbar() {
               </li>
             </ul>
             <ul className="nav navbar-nav ms-4">
-            
               <li className="nav-item dropdown">
                 <Link
                   to="/login"
@@ -100,7 +95,8 @@ function Navbar() {
                     Logout
                   </Link>
                 </div>
-              </li>  <p>{currentUserMail}</p>
+              </li>{' '}
+              <p>{currentUserMail}</p>
             </ul>
           </div>
         </div>
