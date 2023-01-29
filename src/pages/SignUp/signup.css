@@ -1,7 +1,13 @@
 .btn-signup {
     background-color: #2DD3E3;
+    width: 15rem;
+    
 }
 
 a{
     color: black;
+}
+
+.social {
+    color: #2DD3E3;
 }

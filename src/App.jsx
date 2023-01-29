@@ -7,12 +7,12 @@ import EditThanks from './components/editThanks/EditThanks';
 import MainLayout from './components/layouts/MainLayout';
 import About from './pages/about';
 import Blogs from './pages/blogs';
-import Contact from './pages/contact';
+import Contact from './pages/contact/Contact';
 import EditProfile from './pages/editProfile';
 import Home from './pages/home';
 import Login from './pages/login';
 import NotFound from './pages/notFound';
-import Team from './pages/team';
+import Team from './pages/team/Team';
 import ViewProfile from './pages/viewProfile';
 import SignUp from './pages/SignUp';
 import SignUpThanks from './pages/SignUp/SignUpThanks';
@@ -20,8 +20,11 @@ import EnrollHome from './components/Counselor/EnrollHome';
 import Requirements from './components/Counselor/Requirements';
 import CreateAccount from './components/Counselor/CreateAccount';
 import ThankYou from './components/Counselor/ThankYou';
+import Booking from "./components/Booking/Booking";
+import BookingHome from './components/Booking/BookingHome';
 import BlogDetail from './pages/blogDetail';
-
+import SelectCard from './components/SelectCard/SelectCard';
+import PurchaseThanks from './components/Purchase/PurchaseThanks';
 
 function App() {
   return (
@@ -44,7 +47,11 @@ function App() {
         <Route path="/requirements" element={<Requirements />} />
         <Route path="/createAccount" element={<CreateAccount />} />
         <Route path="/thankYou" element={<ThankYou />} />
+        <Route path="/booking" element={<Booking />} />
+        <Route path="/booking-home" element={<BookingHome />} />
         <Route path="blogs/:id" element={<BlogDetail />} />
+        <Route path="/select-card" element={<SelectCard />} />
+        <Route path="/purchase-thanks" element={<PurchaseThanks />} />
 
 
 

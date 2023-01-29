@@ -1,4 +1,5 @@
 import { React, useEffect, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import './editProfile.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -7,6 +8,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import { Link } from 'react-router-dom';
+// import { collection, getDocs } from 'firebase/firestore';
+// import avatar from '../../assets/images/avatar.png';
 // import { collection, getDocs } from 'firebase/firestore';
 // import avatar from '../../assets/images/avatar.png';
 import avatarIcon from '../../assets/Icon/avatar-icon.svg';
@@ -57,6 +60,7 @@ function EditProfile() {
   return (
     <>
       {}
+      {}
       <p className="text-center w-100 edit-p p-3">
         Please fill all the fields with correct and valid details to complete
         your profile.
@@ -99,6 +103,17 @@ function EditProfile() {
                       });
                     }}
                   />
+                  <Form.Control
+                    type="text"
+                    placeholder=""
+                    value={userInfo.fullName}
+                    onChange={(e) => {
+                      setUserInfo({
+                        ...userInfo,
+                        fullName: e.target.value,
+                      });
+                    }}
+                  />
                 </Col>
               </Form.Group>
 
@@ -113,6 +128,10 @@ function EditProfile() {
                     <option value="2">Bachelor Degree</option>
                     <option value="3">Master Degree</option>
                     <option value="3">Doctoral Degree</option>
+                    <option value="1">Associate Degree </option>
+                    <option value="2">Bachelor Degree</option>
+                    <option value="3">Master Degree</option>
+                    <option value="3">Doctoral Degree</option>
                   </Form.Select>
                 </Col>
               </Form.Group>
@@ -122,6 +141,17 @@ function EditProfile() {
                   Hobbies
                 </Form.Label>
                 <Col sm={6}>
+                  <Form.Control
+                    type="text"
+                    placeholder=""
+                    value={userInfo.hobbies}
+                    onChange={(e) => {
+                      setUserInfo({
+                        ...userInfo,
+                        hobbies: e.target.value,
+                      });
+                    }}
+                  />
                   <Form.Control
                     type="text"
                     placeholder=""
@@ -164,6 +194,8 @@ function EditProfile() {
                 <Col sm={6}>
                   <Form.Select aria-label="Default select example">
                     <option>Open this select menu</option>
+                    <option value="1">Female</option>
+                    <option value="2">Male</option>
                     <option value="1">Female</option>
                     <option value="2">Male</option>
                   </Form.Select>
@@ -270,7 +302,8 @@ function EditProfile() {
                   Confirm Password
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control type="password" placeholder="" />
+                  <Form.Control type="password" placeholder=""
+                       />
                 </Col>
               </Form.Group>
 

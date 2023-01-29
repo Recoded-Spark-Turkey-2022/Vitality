@@ -37,7 +37,7 @@ function SignUp() {
     .catch((error) => {
       alert(error.message);
     });
-
+   
     setRegisterName('');
     setRegisterEmail('');
     setRegisterSurname('');
@@ -51,13 +51,14 @@ function SignUp() {
           <img src={SignUpImg} alt="sign up" />
         </div>
         <div className="col">
-        <div className="mb-5">
-        <h1>Sign Up Now</h1>
+        <div className="mb-2">
+        <h1>SIGNUP NOW</h1>
         
       </div>
-          <Card>
-            <Form>
+      <Card  className="w-100 h-100 border-0">
+            <Form className="mt-5 mx-5 w-75 h-50 ">
                 <Row>
+               
               <Form.Group className="mb-3"   as={Col}  md="6" controlId="formName">
                 <Form.Control  type="text" required placeholder="Your Name"  onChange={(event) => {setRegisterName(event.target.value)}} />
               </Form.Group>

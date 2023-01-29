@@ -13,6 +13,7 @@ import {
 import { FaFacebook } from 'react-icons/fa';
 import { GrGoogle } from 'react-icons/gr';
 import {db} from  "../../config/fire";
+import line from '../../assets/images/line.png';
 
 function LoginwithSocial() {
   const [isSignedUp, setIsSignedUp] = useState(false);
@@ -69,10 +70,16 @@ function LoginwithSocial() {
     signInWithRedirect(auth, providerFB);
   }
   return (
-    <div className="d-flex items-center justify-center">
-      <button
+   
+    <div className="">
+      <div className="d-flex items-center mt-1 justify-center">
+      <img src={line} alt="line"  />
+       <p>Or</p>  
+       <img src={line} alt="line"  />
+        </div> 
+       <button
         type="button"
-        className="w-1/12 flex justify-end"
+        className="social mr-2"
         onClick={() => handleFBSignup()}
       >
         <FaFacebook />
@@ -80,7 +87,7 @@ function LoginwithSocial() {
 
       <button
         type="button"
-        className="w-1/12 flex justify-start"
+        className="social"
         onClick={() => handleGoogleSignUp()}
       >
         <GrGoogle />

@@ -4,20 +4,18 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
-import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+import { Row } from 'react-bootstrap';
+import Col from 'react-bootstrap/Col';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../config/fire';
-
+import 'bootstrap/dist/css/bootstrap.css';
 import Logo from '../../assets/images/login-image.png';
 import './login.css';
+import LoginwithSocial from '../SignUp/loginwithSocial';
 
 function Login() {
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
-
-  const [setUser] = useState({});
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
   const login = async () => {
     try {
       console.log('login');
@@ -38,15 +36,11 @@ function Login() {
     <div className="container">
       <div className="mb-5">
         <h1>LOGIN</h1>
-
-        <div className="mb-5">
-          <h4>User logged In</h4>
-        </div>
       </div>
       <div className="row">
         <div className="col">
-          <Card>
-            <Form>
+          <Card  className="w-75 h-100 border-0">
+            <Form className="mt-5 mx-5 w-75 h-50">
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Control
                   type="email"
@@ -66,17 +60,28 @@ function Login() {
                   }}
                 />
               </Form.Group>
+              <Row>
+              <Col className="d-flex justify-content-between">
 
-              <Button variant="primary" type="button" onClick={()=>login()}>
-                Login
-              </Button>
-              <Link to="/sign-up">
-                <Button variant="secondary" type="submit">
-                  Signup
+                <Button
+                  type="button"
+                  className="btn-login col " 
+                  onClick={() => login()}>
+                  Login
                 </Button>
-              </Link>
+
+                <Link to="/sign-up" className="btn-signup col " >
+                  Signup
+                </Link>
+
+                </Col>
+              </Row>
             </Form>
+            <LoginwithSocial />
           </Card>
+
+     
+
         </div>
         <div className="col">
           <img src={Logo} alt="login" />
