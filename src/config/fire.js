@@ -1,30 +1,29 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore,  addDoc,
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import {
+  addDoc,
   collection,
   doc,
-
+  getFirestore,
   updateDoc,
   getDocs,
-  deleteDoc } from "firebase/firestore";  
-import { getAuth } from "firebase/auth";
+  deleteDoc
+} from 'firebase/firestore';
 
 const firebaseConfig = {
-
-  apiKey: "AIzaSyCASciJjdWKvdT-SVpgRKCXzwOoQ4EKROo",
-  authDomain: "vitality-43d63.firebaseapp.com",
-  databaseURL: "https://vitality-43d63-default-rtdb.firebaseio.com",
-  projectId: "vitality-43d63",
-  storageBucket: "vitality-43d63.appspot.com",
-  messagingSenderId: "854106165892",
-  appId: "1:854106165892:web:bc4054e7ebeb77e0a8a8d1",
-  measurementId: "G-JXHY9S4R5V"
-
-}
-
+  apiKey: 'AIzaSyCASciJjdWKvdT-SVpgRKCXzwOoQ4EKROo',
+  authDomain: 'vitality-43d63.firebaseapp.com',
+  databaseURL: 'https://vitality-43d63-default-rtdb.firebaseio.com',
+  projectId: 'vitality-43d63',
+  storageBucket: 'vitality-43d63.appspot.com',
+  messagingSenderId: '854106165892',
+  appId: '1:854106165892:web:bc4054e7ebeb77e0a8a8d1',
+  measurementId: 'G-JXHY9S4R5V',
+};
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-const db = getFirestore(app)
+const db = getFirestore(app);
 
 async function createUser(data) {
   const docRef = await addDoc(collection(db, 'users'), {
@@ -36,7 +35,6 @@ async function createUser(data) {
   });
   console.log('Document written with ID: ', docRef.id);
 }
-
 
 
 async function updateUser(data) {
@@ -52,7 +50,7 @@ async function getUserByEmail() {
       const userCol = collection(db, 'users');
       const userSnapshot = await getDocs(userCol);
       const userData = userSnapshot.docs
-        .map((x) => x.data())
+        .map((x) => ({ ...x.data(), id: x.id }) )
         .find((userD) => userD.email === userObject.email);
   // const snapshot = await getDocs(collection(db, 'users'));
   // const docs = snapshot.docs.map((dd) => ({ ...dd.data(), id: dd.id }));
@@ -63,8 +61,9 @@ async function getUserByEmail() {
 }
 
 async function deleteUser(id) {
+  console.log(id)
   const path = "users/"
-  await deleteDoc(doc(db, +path + id));
+  await deleteDoc(doc(db, path + id));
 }
 
 async function createSubscribe(data) {
@@ -77,4 +76,3 @@ async function createSubscribe(data) {
 }
 
 export { db, createUser, updateUser, getUserByEmail,deleteUser,createSubscribe };
-

@@ -24,6 +24,7 @@ function Login() {
         loginEmail,
         loginPassword
       );
+      
       console.log(user);
       localStorage.setItem('user', JSON.stringify(user.user));
       window.location.href='/'
