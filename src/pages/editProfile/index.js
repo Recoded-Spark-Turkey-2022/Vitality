@@ -318,12 +318,13 @@ function EditProfile() {
                   </Link>
 
                   <Button
+                  className='btn-bg btn-text'
                     type="button"
                     onClick={() => {
                       deleteUser(userInfo.id);
                     }}
                   >
-                    delete
+                 DELETE
                   </Button>
                   <Button
                     className="btn-bg btn-text"

@@ -23,8 +23,8 @@ const BlogDetail = () => {
   }
 
   return (
-    <div key={blog.id} className="blog-detail d-flex flex-column gap-4">
-      <img src={blog.image} alt={blog.title} />
+    <div key={blog.id} className="blog-detail d-flex flex-column gap-4 align-items-center container">
+      <img src={blog.image} alt={blog.title} className="blog-detail-img" />
       <h1> {blog.mainHeader} </h1>
       <p> {blog.mainParagraph} </p>
       <h2> {blog.subtitle} </h2>

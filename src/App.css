@@ -1,4 +1,9 @@
 
+*{
+  list-style-type: none;
+  text-decoration: none!important;
+}
+
 .App {
   text-align: center;
   min-height: 100vh;
