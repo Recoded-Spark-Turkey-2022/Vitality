@@ -31,7 +31,7 @@ function Card4({btnClick}) {
             </h2>
         </div>
 
-        <div className='w-full h-auto py-5 md:py-0 flex flex-col justify-center items-start gap-1 '>
+        <div className='justify-center gap-1'>
             <div>
                 <input 
                 type="radio" 
