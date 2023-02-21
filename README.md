@@ -38,6 +38,8 @@ Building a website with 4-5 of your peers!
 
 You'll be building this project with your peers. You'll be able to read more about the project you will build on your Canvas.
 
+<img width="1038" alt="CAA52EDF-BC1E-4891-8F56-5E6B8EECE80F" src="https://user-images.githubusercontent.com/83344740/220460063-5ca97d19-1f38-4b12-b858-cd12a55e15ea.png">
+
 ## Issues and Pull Requests
 We will use GitHub to manage the project. Any issue (or task) will be created during your team's Sprint Planning. Then once assigned to you, you will have to implement the feature and create a PR.
 
