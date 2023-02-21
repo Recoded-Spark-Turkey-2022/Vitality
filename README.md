@@ -41,6 +41,17 @@ You'll be building this project with your peers. You'll be able to read more abo
 
 
 <img width="921" alt="Ekran Resmi 2023-02-22 00 22 29" src="https://user-images.githubusercontent.com/83344740/220461425-86530f1b-6d53-4307-bfcc-f9f64da4d3e2.png"><img width="921" alt="Ekran Resmi 2023-02-22 00 24 13" src="https://user-images.githubusercontent.com/83344740/220461716-f20a3286-8f08-4b72-8c58-d57e05c8a125.png">
+
+<img width="1071" alt="Ekran Resmi 2023-02-22 00 25 18" src="https://user-images.githubusercontent.com/83344740/220461913-e562fb7d-c841-4f3c-ab87-6a4bed711580.png">
+
+
+<img width="1070" alt="Ekran Resmi 2023-02-22 00 26 13" src="https://user-images.githubusercontent.com/83344740/220462072-b17444be-f290-4b8b-ba67-5f8a7414eee4.png">
+
+<img width="1063" alt="Ekran Resmi 2023-02-22 00 27 18" src="https://user-images.githubusercontent.com/83344740/220462292-53693061-ab33-466e-8a9b-e55aa285f76d.png">
+
+<img width="1082" alt="Ekran Resmi 2023-02-22 00 29 59" src="https://user-images.githubusercontent.com/83344740/220462796-69074dee-da78-4453-8650-349a132034b5.png">
+
+
 ## Issues and Pull Requests
 We will use GitHub to manage the project. Any issue (or task) will be created during your team's Sprint Planning. Then once assigned to you, you will have to implement the feature and create a PR.
 
