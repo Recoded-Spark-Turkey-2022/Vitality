@@ -15,6 +15,21 @@ Figma link : https://www.figma.com/file/ae4wheNUlDfAcNOmxj13Xy/Online-Therapist?
 Brief Link : https://docs.google.com/document/d/1Und4QiW51T7f5kW_OpHho_WBV1wGlaiiODos_cO5Wuo/edit
 
 
+Capstone Guide
+This is your chance to apply everything you have learned in the Bootcamp in a team project!
+
+Why do we do this?
+We believe the best way to learn is by doing, so the next six-seven weeks will be about applying everything you’ve learned into a final Capstone project.
+
+This ultimately benefits you—if you don’t have any related work experience on your resume, you might be a tough sell to an employer, but working on projects allows you to show you have the skills required for web development work.
+
+You will then have an opportunity to showcase your Capstone project and your technical and durable skills to future employers!
+
+ 
+
+What will you be doing?
+Building a website with 4-5 of your peers!
+
 
 You'll be building this project with your peers. You'll be able to read more about the project you will build on your Canvas.
 
