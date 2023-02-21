@@ -34,6 +34,7 @@ You will then have an opportunity to showcase your Capstone project and your tec
 What will you be doing?
 Building a website with 4-5 of your peers!
 
+<img width="1061" alt="Ekran Resmi 2023-02-22 00 09 23" src="https://user-images.githubusercontent.com/83344740/220459047-c9b0f5fc-af7b-4c38-8d38-56d50ca84ac2.png">
 
 You'll be building this project with your peers. You'll be able to read more about the project you will build on your Canvas.
 
