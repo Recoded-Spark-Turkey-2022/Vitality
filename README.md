@@ -1,6 +1,7 @@
 # Capstone Project
 
 Our project link is https://vitality-online-therapist.netlify.app/
+Figma link : https://www.figma.com/file/ae4wheNUlDfAcNOmxj13Xy/Online-Therapist?node-id=0%3A1&t=erdHN4EExd0iKkG9-0
 
 You'll be building this project with your peers. You'll be able to read more about the project you will build on your Canvas.
 
