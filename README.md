@@ -18,7 +18,7 @@ Figma link : https://www.figma.com/file/ae4wheNUlDfAcNOmxj13Xy/Online-Therapist?
 Brief Link : https://docs.google.com/document/d/1Und4QiW51T7f5kW_OpHho_WBV1wGlaiiODos_cO5Wuo/edit
 
 
-Capstone Guide
+# Capstone Guide
 This is your chance to apply everything you have learned in the Bootcamp in a team project!
 
 Why do we do this?
@@ -39,6 +39,8 @@ You'll be building this project with your peers. You'll be able to read more abo
 
 <img width="1038" alt="CAA52EDF-BC1E-4891-8F56-5E6B8EECE80F" src="https://user-images.githubusercontent.com/83344740/220460063-5ca97d19-1f38-4b12-b858-cd12a55e15ea.png"><img width="1037" alt="Ekran Resmi 2023-02-22 00 16 40" src="https://user-images.githubusercontent.com/83344740/220460420-9cd84bfe-a78a-4826-83e3-a26039aa912e.png">
 
+
+<img width="921" alt="Ekran Resmi 2023-02-22 00 22 29" src="https://user-images.githubusercontent.com/83344740/220461425-86530f1b-6d53-4307-bfcc-f9f64da4d3e2.png"><img width="921" alt="Ekran Resmi 2023-02-22 00 24 13" src="https://user-images.githubusercontent.com/83344740/220461716-f20a3286-8f08-4b72-8c58-d57e05c8a125.png">
 ## Issues and Pull Requests
 We will use GitHub to manage the project. Any issue (or task) will be created during your team's Sprint Planning. Then once assigned to you, you will have to implement the feature and create a PR.
 
