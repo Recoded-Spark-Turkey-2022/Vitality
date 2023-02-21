@@ -1,4 +1,4 @@
-# Capstone Project
+# Capstone Project (Online Therapist)
 
 Our project link is https://vitality-online-therapist.netlify.app/
 
