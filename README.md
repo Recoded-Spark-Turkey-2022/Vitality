@@ -3,7 +3,7 @@
 Our project link is https://vitality-online-therapist.netlify.app/
 
 
-
+<img width="532" alt="Ekran Resmi 2023-02-22 00 19 42" src="https://user-images.githubusercontent.com/83344740/220460971-10e1a2a8-ea3e-4791-9cd6-08813905d5eb.png">
 
 ![CA16170E-6798-4B47-AD30-BFC7E9484CCF](https://user-images.githubusercontent.com/83344740/220455646-714bf0af-9692-4290-8712-48136c7f4a60.jpeg)
 
